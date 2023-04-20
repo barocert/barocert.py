@@ -5,9 +5,6 @@ barocert 1.0.0
 
 Barocert API for Python.
 
-.. image:: https://api.travis-ci.org/linkhub-sdk/Barocert.py.svg?branch=master
-        :target: https://travis-ci.org/linkhub-sdk/Barocert.py
-
 * requirements
 
   * Python 2.6+
@@ -27,8 +24,8 @@ Install from source:
 
 ::
 
-    $ git clone git://github.com/linkhub-sdk/Barocert.py.git
-    $ cd Barocert.py
+    $ git clone git://github.com/barocert/barocert.py.git
+    $ cd barocert.py
     $ python setup.py install
 
 사이트
