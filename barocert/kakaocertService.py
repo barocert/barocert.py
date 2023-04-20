@@ -90,7 +90,7 @@ class KakaocertService(__with_metaclass(Singleton, object)):
     def _getToken(self):
 
         try:
-            token = self.__tokenCache[self.__secretKey]
+            token = self.__tokenCache[self.__linkID]
         except KeyError:
             token = None
 
@@ -106,11 +106,11 @@ class KakaocertService(__with_metaclass(Singleton, object)):
                                               self.UseStaticIP, self.UseLocalTimeYN, False)
 
                 try:
-                    del self.__tokenCache[self.__secretKey]
+                    del self.__tokenCache[self.__linkID]
                 except KeyError:
                     pass
 
-                self.__tokenCache[self.__secretKey] = token
+                self.__tokenCache[self.__linkID] = token
 
             except LinkhubException as LE:
                 raise BarocertException(LE.code, LE.message)
