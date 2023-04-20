@@ -27,9 +27,9 @@ class KakaocertServiceTestCase(unittest.TestCase):
         
     # def test_requestIdentity(self):
     #     identity = Identity(        
-    #         receiverHP = self.kakocertService._encrypt('01054437896'),
-    #         receiverName = self.kakocertService._encrypt('최상혁'),
-    #         receiverBirthday = self.kakocertService._encrypt('19880301'),
+    #         receiverHP = self.kakocertService._encrypt('01012341234'),
+    #         receiverName = self.kakocertService._encrypt('홍길동'),
+    #         receiverBirthday = self.kakocertService._encrypt('19700101'),
     #         ci = '',
     #         reqTitle = '인증요청 메시지 제목란',
     #         expireIn = 1000,
@@ -80,9 +80,9 @@ class KakaocertServiceTestCase(unittest.TestCase):
     
     # def test_requestSign(self):
     #     sign = Sign(        
-    #         receiverHP = self.kakocertService._encrypt('01054437896'),
-    #         receiverName = self.kakocertService._encrypt('최상혁'),
-    #         receiverBirthday = self.kakocertService._encrypt('19880301'),
+    #         receiverHP = self.kakocertService._encrypt('01012341234'),
+    #         receiverName = self.kakocertService._encrypt('홍길동'),
+    #         receiverBirthday = self.kakocertService._encrypt('19700101'),
     #         ci = '',
     #         reqTitle = '인증요청 메시지 제목란',
     #         expireIn = 1000,
@@ -145,9 +145,9 @@ class KakaocertServiceTestCase(unittest.TestCase):
     #         )    
         
     #     multiSign = MultiSign(        
-    #         receiverHP = self.kakocertService._encrypt('01054437896'),
-    #         receiverName = self.kakocertService._encrypt('최상혁'),
-    #         receiverBirthday = self.kakocertService._encrypt('19880301'),
+    #         receiverHP = self.kakocertService._encrypt('01012341234'),
+    #         receiverName = self.kakocertService._encrypt('홍길동'),
+    #         receiverBirthday = self.kakocertService._encrypt('19700101'),
     #         ci = '',
     #         reqTitle = '인증요청 메시지 제목란',
     #         expireIn = 1000,
@@ -199,30 +199,30 @@ class KakaocertServiceTestCase(unittest.TestCase):
     #         print(BE.code)
     #         print(BE.message)
             
-    # def test_requestCMS(self):
-    #     cms = CMS(        
-    #         receiverHP = self.kakocertService._encrypt('01054437896'),
-    #         receiverName = self.kakocertService._encrypt('최상혁'),
-    #         receiverBirthday = self.kakocertService._encrypt('19880301'),
-    #         ci = '',
-    #         reqTitle = '인증요청 메시지 제목란',
-    #         expireIn = 1000,
-    #         requestCorp = self.kakocertService._encrypt("링크허브"),
-    #         bankName = self.kakocertService._encrypt("국민은행"),
-    #         bankAccountNum = self.kakocertService._encrypt("19-321442-1231"),
-    #         bankAccountName = self.kakocertService._encrypt("최상혁"),
-    #         bankAccountBirthday = self.kakocertService._encrypt("19880301"),
-    #         bankServiceType = self.kakocertService._encrypt("CMS"),
-    #         appUseYN = False,
-    #         returnURL = 'https://kakao.barocert.com'
-    #     )
+    def test_requestCMS(self):
+        cms = CMS(        
+            receiverHP = self.kakocertService._encrypt('01012341234'),
+            receiverName = self.kakocertService._encrypt('홍길동'),
+            receiverBirthday = self.kakocertService._encrypt('19700101'),
+            ci = '',
+            reqTitle = '인증요청 메시지 제목란',
+            expireIn = 1000,
+            requestCorp = self.kakocertService._encrypt("링크허브"),
+            bankName = self.kakocertService._encrypt("국민은행"),
+            bankAccountNum = self.kakocertService._encrypt("19-321442-1231"),
+            bankAccountName = self.kakocertService._encrypt("홍길동"),
+            bankAccountBirthday = self.kakocertService._encrypt("19700101"),
+            bankServiceType = self.kakocertService._encrypt("CMS"),
+            appUseYN = False,
+            returnURL = 'https://kakao.barocert.com'
+        )
         
-    #     try :
-    #         obj = self.kakocertService.requestCMS(self.clientCode, cms)
-    #         print(obj.receiptID)
-    #     except BarocertException as BE :
-    #         print(BE.code)
-    #         print(BE.message)
+        try :
+            obj = self.kakocertService.requestCMS(self.clientCode, cms)
+            print(obj.receiptID)
+        except BarocertException as BE :
+            print(BE.code)
+            print(BE.message)
             
     # def test_getCMSStatus(self) :
     #     try :
