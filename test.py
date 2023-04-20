@@ -102,7 +102,7 @@ class KakaocertServiceTestCase(unittest.TestCase):
             
     # def test_getSignState(self) :
     #     try :
-    #         obj = self.kakocertService.getSignState(self.clientCode, '02304190230300000040000000000040')
+    #         obj = self.kakocertService.getSignStatus(self.clientCode, '02304190230300000040000000000040')
     #         print(obj.receiptID)
     #         print(obj.clientCode)
     #         print(obj.state)
@@ -167,7 +167,7 @@ class KakaocertServiceTestCase(unittest.TestCase):
             
     # def test_getMultiSignState(self) :
     #     try :
-    #         obj = self.kakocertService.getMultiSignState(self.clientCode, '02304190230300000040000000000041')
+    #         obj = self.kakocertService.getMultiSignStatus(self.clientCode, '02304190230300000040000000000041')
     #         print(obj.receiptID)
     #         print(obj.clientCode)
     #         print(obj.state)

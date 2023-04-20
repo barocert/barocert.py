@@ -298,7 +298,7 @@ class KakaocertService(__with_metaclass(Singleton, object)):
         return self._httppost('/KAKAO/Sign/' + clientCode, postData)
 
     # 전자서명 상태확인(단건)
-    def getSignState(self, clientCode, receiptId):
+    def getSignStatus(self, clientCode, receiptId):
 
         if clientCode == None or clientCode == "":
             raise BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.")
@@ -374,7 +374,7 @@ class KakaocertService(__with_metaclass(Singleton, object)):
         return self._httppost('/KAKAO/MultiSign/' + clientCode, postData)
 
     # 전자서명 상태확인(복수)	
-    def getMultiSignState(self, clientCode, receiptId):
+    def getMultiSignStatus(self, clientCode, receiptId):
 
         if clientCode == None or clientCode == "":
             raise BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.")
