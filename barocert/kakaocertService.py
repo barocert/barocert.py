@@ -30,6 +30,8 @@ except ImportError:
     import httplib as httpclient
 
 import linkhub
+
+from .base import BarocertException
 from linkhub import LinkhubException
 
 ServiceID = 'BAROCERT'
@@ -509,31 +511,25 @@ class KakaocertService(__with_metaclass(Singleton, object)):
                 return True
         return False
 
-class CMS(object):
+class KakaoCMS(object):
     def __init__(self, **kwargs):
         self.__dict__ = kwargs
 
-class Identity(object):
+class KakaoIdentity(object):
     def __init__(self, **kwargs):
         self.__dict__ = kwargs
         
-class Sign(object):
+class KakaoSign(object):
     def __init__(self, **kwargs):
         self.__dict__ = kwargs
 
-class MultiSign(object):
+class KakaoMultiSign(object):
     def __init__(self, **kwargs):
         self.__dict__ = kwargs
 
-class MultiSignTokens(object):
+class KakaoMultiSignTokens(object):
     def __init__(self, **kwargs):
         self.__dict__ = kwargs
-
-
-class BarocertException(Exception):
-    def __init__(self, code, message):
-        self.code = code
-        self.message = message
 
 class KakaocertEncoder(JSONEncoder):
     def default(self, o):
