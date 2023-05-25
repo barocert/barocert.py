@@ -9,6 +9,7 @@ Barocert API for Python.
 
   * Python 2.6+
   * linkhub
+  * pycryptodome 2.6.1+
 
 ************
 Installation
