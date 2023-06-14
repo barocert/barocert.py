@@ -6,7 +6,7 @@
 # 
 # Author : linkhub dev
 # Written : 2023-03-08
-# Updated : 2023-04-19
+# Updated : 2023-06-13
 # Thanks for your interest.
 
 class BarocertException(Exception):

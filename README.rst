@@ -1,7 +1,7 @@
 ####
 barocert.py
 ####
-barocert 1.0.1
+barocert 1.0.2
 
 Barocert API for Python.
 

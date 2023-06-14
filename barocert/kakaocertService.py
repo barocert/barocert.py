@@ -6,7 +6,7 @@
 # 
 # Author : linkhub dev
 # Written : 2023-03-08
-# Updated : 2023-04-19
+# Updated : 2023-06-14
 # Thanks for your interest.
 
 import json
@@ -201,13 +201,12 @@ class KakaocertService(__with_metaclass(Singleton, object)):
             raise BarocertException(-99999999, "이용기관코드는 12자 입니다.")
         if identity == None or identity == "":
             raise BarocertException(-99999999, "본인인증 요청정보가 입력되지 않았습니다.")    
-        if identity.ci == None or identity.ci == "":
-            if identity.receiverHP == None or identity.receiverHP == "":
-                raise BarocertException(-99999999, "수신자 휴대폰번호가 입력되지 않았습니다.")
-            if identity.receiverName == None or identity.receiverName == "":
-                raise BarocertException(-99999999, "수신자 성명이 입력되지 않았습니다.")
-            if identity.receiverBirthday == None or identity.receiverBirthday == "":
-                raise BarocertException(-99999999, "생년월일이 입력되지 않았습니다.")
+        if identity.receiverHP == None or identity.receiverHP == "":
+            raise BarocertException(-99999999, "수신자 휴대폰번호가 입력되지 않았습니다.")
+        if identity.receiverName == None or identity.receiverName == "":
+            raise BarocertException(-99999999, "수신자 성명이 입력되지 않았습니다.")
+        if identity.receiverBirthday == None or identity.receiverBirthday == "":
+            raise BarocertException(-99999999, "생년월일이 입력되지 않았습니다.")
         
         if identity.reqTitle == None or identity.reqTitle == "":
             raise BarocertException(-99999999, "인증요청 메시지 제목이 입력되지 않았습니다.")
@@ -273,13 +272,12 @@ class KakaocertService(__with_metaclass(Singleton, object)):
         
         if sign == None or sign == "":
             raise BarocertException(-99999999, "전자서명 요청정보가 입력되지 않았습니다.")
-        if sign.ci == None or sign.ci == "":
-            if sign.receiverHP == None or sign.receiverHP == "":
-                raise BarocertException(-99999999, "수신자 휴대폰번호가 입력되지 않았습니다.")
-            if sign.receiverName == None or sign.receiverName == "":
-                raise BarocertException(-99999999, "수신자 성명이 입력되지 않았습니다.")
-            if sign.receiverBirthday == None or sign.receiverBirthday == "":
-                raise BarocertException(-99999999, "생년월일이 입력되지 않았습니다.")
+        if sign.receiverHP == None or sign.receiverHP == "":
+            raise BarocertException(-99999999, "수신자 휴대폰번호가 입력되지 않았습니다.")
+        if sign.receiverName == None or sign.receiverName == "":
+            raise BarocertException(-99999999, "수신자 성명이 입력되지 않았습니다.")
+        if sign.receiverBirthday == None or sign.receiverBirthday == "":
+            raise BarocertException(-99999999, "생년월일이 입력되지 않았습니다.")
         
         if sign.reqTitle == None or sign.reqTitle == "":
             raise BarocertException(-99999999, "인증요청 메시지 제목이 입력되지 않았습니다.")
@@ -347,13 +345,12 @@ class KakaocertService(__with_metaclass(Singleton, object)):
         
         if multiSign == None or multiSign == "":
             raise BarocertException(-99999999, "전자서명 요청정보가 입력되지 않았습니다.")
-        if multiSign.ci == None or multiSign.ci == "":
-            if multiSign.receiverHP == None or multiSign.receiverHP == "":
-                raise BarocertException(-99999999, "수신자 휴대폰번호가 입력되지 않았습니다.")
-            if multiSign.receiverName == None or multiSign.receiverName == "":
-                raise BarocertException(-99999999, "수신자 성명이 입력되지 않았습니다.")
-            if multiSign.receiverBirthday == None or multiSign.receiverBirthday == "":
-                raise BarocertException(-99999999, "생년월일이 입력되지 않았습니다.")
+        if multiSign.receiverHP == None or multiSign.receiverHP == "":
+            raise BarocertException(-99999999, "수신자 휴대폰번호가 입력되지 않았습니다.")
+        if multiSign.receiverName == None or multiSign.receiverName == "":
+            raise BarocertException(-99999999, "수신자 성명이 입력되지 않았습니다.")
+        if multiSign.receiverBirthday == None or multiSign.receiverBirthday == "":
+            raise BarocertException(-99999999, "생년월일이 입력되지 않았습니다.")
         
         if multiSign.reqTitle == None or multiSign.reqTitle == "":
             raise BarocertException(-99999999, "인증요청 메시지 제목이 입력되지 않았습니다.")
@@ -423,13 +420,12 @@ class KakaocertService(__with_metaclass(Singleton, object)):
             raise BarocertException(-99999999, "이용기관코드는 12자 입니다.")
         if cms == None or cms == "":
             raise BarocertException(-99999999, "자동이체 출금동의 요청정보가 입력되지 않았습니다.")
-        if cms.ci == None or cms.ci == "":
-            if cms.receiverHP == None or cms.receiverHP == "":
-                raise BarocertException(-99999999, "수신자 휴대폰번호가 입력되지 않았습니다.")
-            if cms.receiverName == None or cms.receiverName == "":
-                raise BarocertException(-99999999, "수신자 성명이 입력되지 않았습니다.")
-            if cms.receiverBirthday == None or cms.receiverBirthday == "":
-                raise BarocertException(-99999999, "생년월일이 입력되지 않았습니다.")
+        if cms.receiverHP == None or cms.receiverHP == "":
+            raise BarocertException(-99999999, "수신자 휴대폰번호가 입력되지 않았습니다.")
+        if cms.receiverName == None or cms.receiverName == "":
+            raise BarocertException(-99999999, "수신자 성명이 입력되지 않았습니다.")
+        if cms.receiverBirthday == None or cms.receiverBirthday == "":
+            raise BarocertException(-99999999, "생년월일이 입력되지 않았습니다.")
         
         if cms.reqTitle == None or cms.reqTitle == "":
             raise BarocertException(-99999999, "인증요청 메시지 제목이 입력되지 않았습니다.")
