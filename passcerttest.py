@@ -31,9 +31,9 @@ class PasscertServiceTestCase(unittest.TestCase):
     # # 본인인증 요청
     # def test_requestIdentity(self):
     #     identity = PassIdentity(        
-    #         receiverHP = self.passcertService._encrypt('01067668440'),
-    #         receiverName = self.passcertService._encrypt('정우석'),
-    #         receiverBirthday = self.passcertService._encrypt('19900911'),
+    #         receiverHP = self.passcertService._encrypt('01012341234'),
+    #         receiverName = self.passcertService._encrypt('홍길동'),
+    #         receiverBirthday = self.passcertService._encrypt('19700101'),
     #         reqTitle = '본인인증 요청 메시지 제목란',
     #         reqMessage = self.passcertService._encrypt('본인인증 요청 메시지'),
     #         callCenterNum = '1600-9854',
@@ -81,8 +81,8 @@ class PasscertServiceTestCase(unittest.TestCase):
     # # 본인인증 검증            
     # def test_verifyIdentity(self) :
     #     identityVerify = PassIdentityVerify(        
-    #         receiverHP = self.passcertService._encrypt('01067668440'),
-    #         receiverName = self.passcertService._encrypt('정우석')
+    #         receiverHP = self.passcertService._encrypt('01012341234'),
+    #         receiverName = self.passcertService._encrypt('홍길동')
     #     )
 
     #     try :
@@ -104,9 +104,9 @@ class PasscertServiceTestCase(unittest.TestCase):
     # # 전자서명 요청
     # def test_requestSign(self):
     #     sign = PassSign(        
-    #         receiverHP = self.passcertService._encrypt('01067668440'),
-    #         receiverName = self.passcertService._encrypt('정우석'),
-    #         receiverBirthday = self.passcertService._encrypt('19900911'),
+    #         receiverHP = self.passcertService._encrypt('01012341234'),
+    #         receiverName = self.passcertService._encrypt('홍길동'),
+    #         receiverBirthday = self.passcertService._encrypt('19700101'),
     #         reqTitle = '전자서명 요청 메시지 제목란',
     #         reqMessage = self.passcertService._encrypt('전자서명 요청 메시지'),
     #         callCenterNum = '1600-9854',
@@ -159,8 +159,8 @@ class PasscertServiceTestCase(unittest.TestCase):
             
     # def test_verifySign(self) :
     #     signVerify = PassSignVerify(        
-    #         receiverHP = self.passcertService._encrypt('01067668440'),
-    #         receiverName = self.passcertService._encrypt('정우석')
+    #         receiverHP = self.passcertService._encrypt('01012341234'),
+    #         receiverName = self.passcertService._encrypt('홍길동')
     #     )
         
     #     try :
@@ -183,9 +183,9 @@ class PasscertServiceTestCase(unittest.TestCase):
     # # 자동이체 출금동의 요청           
     # def test_requestCMS(self):
     #     cms = PassCMS(        
-    #         receiverHP = self.passcertService._encrypt('01067668440'),
-    #         receiverName = self.passcertService._encrypt('정우석'),
-    #         receiverBirthday = self.passcertService._encrypt('19900911'),
+    #         receiverHP = self.passcertService._encrypt('01012341234'),
+    #         receiverName = self.passcertService._encrypt('홍길동'),
+    #         receiverBirthday = self.passcertService._encrypt('19700101'),
     #         reqTitle = '출금동의 요청 메시지 제목란',
     #         reqMessage = self.passcertService._encrypt('출금동의 요청 메시지'),
     #         callCenterNum = '1600-9854',
@@ -237,8 +237,8 @@ class PasscertServiceTestCase(unittest.TestCase):
     # # 자동이체 출금동의 검증            
     # def test_verifyCMS(self) :
     #     cmsVerify = PassCMSVerify(        
-    #         receiverHP = self.passcertService._encrypt('01067668440'),
-    #         receiverName = self.passcertService._encrypt('정우석')
+    #         receiverHP = self.passcertService._encrypt('01012341234'),
+    #         receiverName = self.passcertService._encrypt('홍길동')
     #     )
         
     #     try :
@@ -261,9 +261,9 @@ class PasscertServiceTestCase(unittest.TestCase):
     # # 간편로그인 요청
     # def test_requestLogin(self):
     #     login = PassLogin(        
-    #         receiverHP = self.passcertService._encrypt('01067668440'),
-    #         receiverName = self.passcertService._encrypt('정우석'),
-    #         receiverBirthday = self.passcertService._encrypt('19900911'),
+    #         receiverHP = self.passcertService._encrypt('01012341234'),
+    #         receiverName = self.passcertService._encrypt('홍길동'),
+    #         receiverBirthday = self.passcertService._encrypt('19700101'),
     #         reqTitle = '간편로그인 요청 메시지 제목란',
     #         reqMessage = self.passcertService._encrypt('간편로그인 요청 메시지'),
     #         callCenterNum = '1600-9854',
@@ -311,8 +311,8 @@ class PasscertServiceTestCase(unittest.TestCase):
     # # 간편로그인 검증            
     # def test_verifyLogin(self) :
     #     loginVerify = PassLoginVerify(        
-    #         receiverHP = self.passcertService._encrypt('01067668440'),
-    #         receiverName = self.passcertService._encrypt('정우석')
+    #         receiverHP = self.passcertService._encrypt('01012341234'),
+    #         receiverName = self.passcertService._encrypt('홍길동')
     #     )
 
     #     try :

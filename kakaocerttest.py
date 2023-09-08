@@ -31,9 +31,9 @@ class KakaocertServiceTestCase(unittest.TestCase):
     # # 본인인증 요청
     # def test_requestIdentity(self):
     #     identity = KakaoIdentity(        
-    #         receiverHP = self.kakaocertService._encrypt('01067668440'),
-    #         receiverName = self.kakaocertService._encrypt('정우석'),
-    #         receiverBirthday = self.kakaocertService._encrypt('19900911'),
+    #         receiverHP = self.kakaocertService._encrypt('01012341234'),
+    #         receiverName = self.kakaocertService._encrypt('홍길동'),
+    #         receiverBirthday = self.kakaocertService._encrypt('19700101'),
     #         reqTitle = '인증요청 메시지 제목란',
     #         expireIn = 1000,
     #         token = self.kakaocertService._encrypt('본인인증요청토큰'),
@@ -87,9 +87,9 @@ class KakaocertServiceTestCase(unittest.TestCase):
     # # 전자서명(단건) 요청
     # def test_requestSign(self):
     #     sign = KakaoSign(        
-    #         receiverHP = self.kakaocertService._encrypt('01067668440'),
-    #         receiverName = self.kakaocertService._encrypt('정우석'),
-    #         receiverBirthday = self.kakaocertService._encrypt('19900911'),
+    #         receiverHP = self.kakaocertService._encrypt('01012341234'),
+    #         receiverName = self.kakaocertService._encrypt('홍길동'),
+    #         receiverBirthday = self.kakaocertService._encrypt('19700101'),
     #         reqTitle = '인증요청 메시지 제목란',
     #         expireIn = 1000,
     #         token = self.kakaocertService._encrypt('전자서명단건테스트데이터'),
@@ -154,9 +154,9 @@ class KakaocertServiceTestCase(unittest.TestCase):
     #         )    
         
     #     multiSign = KakaoMultiSign(        
-    #         receiverHP = self.kakaocertService._encrypt('01067668440'),
-    #         receiverName = self.kakaocertService._encrypt('정우석'),
-    #         receiverBirthday = self.kakaocertService._encrypt('19900911'),
+    #         receiverHP = self.kakaocertService._encrypt('01012341234'),
+    #         receiverName = self.kakaocertService._encrypt('홍길동'),
+    #         receiverBirthday = self.kakaocertService._encrypt('19700101'),
     #         reqTitle = '인증요청 메시지 제목란',
     #         expireIn = 1000,
     #         tokens = multiSignTokens,
@@ -212,9 +212,9 @@ class KakaocertServiceTestCase(unittest.TestCase):
     # # 자동이체 출금동의 요청
     # def test_requestCMS(self):
     #     cms = KakaoCMS(        
-    #         receiverHP = self.kakaocertService._encrypt('01067668440'),
-    #         receiverName = self.kakaocertService._encrypt('정우석'),
-    #         receiverBirthday = self.kakaocertService._encrypt('19900911'),
+    #         receiverHP = self.kakaocertService._encrypt('01012341234'),
+    #         receiverName = self.kakaocertService._encrypt('홍길동'),
+    #         receiverBirthday = self.kakaocertService._encrypt('19700101'),
     #         ci = '',
     #         reqTitle = '인증요청 메시지 제목란',
     #         expireIn = 1000,
