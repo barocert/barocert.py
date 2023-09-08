@@ -21,33 +21,37 @@ from barocert import *
 class KakaocertServiceTestCase(unittest.TestCase):
     @classmethod
     def setUpClass(self):
-        self.kakocertService = KakaocertService('LINKHUB_BC', 'npCAl0sHPpJqlvMbrcBmNagrxkQ74w9Sl0A+M++kMCE=')
-        self.kakocertService.IPRestrictOnOff = True
-        self.kakocertService.UseLocalTimeYN = True
-        self.clientCode = "023030000004"
+        self.kakaocertService = KakaocertService('TESTER', 'SwWxqU+0TErBXy/9TVjIPEnI0VTUMMSQZtJf3Ed8q3I=')
+        self.kakaocertService.IPRestrictOnOff = True
+        self.kakaocertService.UseLocalTimeYN = True
+        self.kakaocertService.UseStaticIP = False
         
+        self.clientCode = "023040000001"
+
+    # # 본인인증 요청
     # def test_requestIdentity(self):
     #     identity = KakaoIdentity(        
-    #         receiverHP = self.kakocertService._encrypt('01012341234'),
-    #         receiverName = self.kakocertService._encrypt('홍길동'),
-    #         receiverBirthday = self.kakocertService._encrypt('19700101'),
-    #         ci = '',
+    #         receiverHP = self.kakaocertService._encrypt('01067668440'),
+    #         receiverName = self.kakaocertService._encrypt('정우석'),
+    #         receiverBirthday = self.kakaocertService._encrypt('19900911'),
     #         reqTitle = '인증요청 메시지 제목란',
     #         expireIn = 1000,
-    #         token = self.kakocertService._encrypt('본인인증요청토큰'),
-    #         returnURL = 'https://kakao.barocert.com'
+    #         token = self.kakaocertService._encrypt('본인인증요청토큰'),
+    #         appUseYN = False,
+    #         returnURL = 'https://kakao.barocert.com',
     #     )
         
     #     try :
-    #         obj = self.kakocertService.requestIdentity(self.clientCode, identity)
+    #         obj = self.kakaocertService.requestIdentity(self.clientCode, identity)
     #         print(obj.receiptID)
     #     except BarocertException as BE :
     #         print(BE.code)
     #         print(BE.message)
-            
+
+    # # 본인인증 상태확인        
     # def test_getIdentityStatus(self) :
     #     try :
-    #         obj = self.kakocertService.getIdentityStatus(self.clientCode, '02304190230300000040000000000039')
+    #         obj = self.kakaocertService.getIdentityStatus(self.clientCode, '02309080230400000010000000000005')
     #         print(obj.receiptID)
     #         print(obj.clientCode)
     #         print(obj.state)
@@ -68,9 +72,10 @@ class KakaocertServiceTestCase(unittest.TestCase):
     #         print(BE.code)
     #         print(BE.message)
             
+    # # 본인인증 검증            
     # def test_verifyIdentity(self) :
     #     try :
-    #         obj = self.kakocertService.verifyIdentity(self.clientCode, '02304190230300000040000000000039')
+    #         obj = self.kakaocertService.verifyIdentity(self.clientCode, '02309080230400000010000000000002')
     #         print(obj.receiptID)
     #         print(obj.state)
     #         print(obj.signedData)
@@ -79,30 +84,31 @@ class KakaocertServiceTestCase(unittest.TestCase):
     #         print(BE.code)
     #         print(BE.message)
     
+    # # 전자서명(단건) 요청
     # def test_requestSign(self):
     #     sign = KakaoSign(        
-    #         receiverHP = self.kakocertService._encrypt('01012341234'),
-    #         receiverName = self.kakocertService._encrypt('홍길동'),
-    #         receiverBirthday = self.kakocertService._encrypt('19700101'),
-    #         ci = '',
+    #         receiverHP = self.kakaocertService._encrypt('01067668440'),
+    #         receiverName = self.kakaocertService._encrypt('정우석'),
+    #         receiverBirthday = self.kakaocertService._encrypt('19900911'),
     #         reqTitle = '인증요청 메시지 제목란',
     #         expireIn = 1000,
-    #         token = self.kakocertService._encrypt('전자서명단건테스트데이터'),
+    #         token = self.kakaocertService._encrypt('전자서명단건테스트데이터'),
     #         tokenType = 'TEXT',
     #         appUseYN = False,
     #         returnURL = 'https://kakao.barocert.com'
     #     )
         
     #     try :
-    #         obj = self.kakocertService.requestSign(self.clientCode, sign)
+    #         obj = self.kakaocertService.requestSign(self.clientCode, sign)
     #         print(obj.receiptID)
     #     except BarocertException as BE :
     #         print(BE.code)
     #         print(BE.message)
             
+    # # 전자서명(단건) 상태확인            
     # def test_getSignState(self) :
     #     try :
-    #         obj = self.kakocertService.getSignStatus(self.clientCode, '02304190230300000040000000000040')
+    #         obj = self.kakaocertService.getSignStatus(self.clientCode, '02309080230400000010000000000006')
     #         print(obj.receiptID)
     #         print(obj.clientCode)
     #         print(obj.state)
@@ -123,9 +129,10 @@ class KakaocertServiceTestCase(unittest.TestCase):
     #         print(BE.code)
     #         print(BE.message)
             
+    # # 전자서명(단건) 검증            
     # def test_verifySign(self) :
     #     try :
-    #         obj = self.kakocertService.verifySign(self.clientCode, '02304190230300000040000000000040')
+    #         obj = self.kakaocertService.verifySign(self.clientCode, '02309080230400000010000000000006')
     #         print(obj.receiptID)
     #         print(obj.state)
     #         print(obj.signedData)
@@ -134,6 +141,7 @@ class KakaocertServiceTestCase(unittest.TestCase):
     #         print(BE.code)
     #         print(BE.message)
             
+    # # 전자서명(복수) 요청
     # def test_requestMultiSign(self):
         
     #     multiSignTokens = []
@@ -141,15 +149,14 @@ class KakaocertServiceTestCase(unittest.TestCase):
     #         multiSignTokens.append(
     #             KakaoMultiSignTokens(
     #                 reqTitle = "전자서명복수테스트",
-    #                 token = self.kakocertService._encrypt("전자서명복수테스트데이터" + str(x)) 
+    #                 token = self.kakaocertService._encrypt("전자서명복수테스트데이터" + str(x)) 
     #             )
     #         )    
         
     #     multiSign = KakaoMultiSign(        
-    #         receiverHP = self.kakocertService._encrypt('01012341234'),
-    #         receiverName = self.kakocertService._encrypt('홍길동'),
-    #         receiverBirthday = self.kakocertService._encrypt('19700101'),
-    #         ci = '',
+    #         receiverHP = self.kakaocertService._encrypt('01067668440'),
+    #         receiverName = self.kakaocertService._encrypt('정우석'),
+    #         receiverBirthday = self.kakaocertService._encrypt('19900911'),
     #         reqTitle = '인증요청 메시지 제목란',
     #         expireIn = 1000,
     #         tokens = multiSignTokens,
@@ -159,15 +166,16 @@ class KakaocertServiceTestCase(unittest.TestCase):
     #     )
         
     #     try :
-    #         obj = self.kakocertService.requestMultiSign(self.clientCode, multiSign)
+    #         obj = self.kakaocertService.requestMultiSign(self.clientCode, multiSign)
     #         print(obj.receiptID)
     #     except BarocertException as BE :
     #         print(BE.code)
     #         print(BE.message)
             
+    # # 전자서명(복수) 상태확인            
     # def test_getMultiSignState(self) :
     #     try :
-    #         obj = self.kakocertService.getMultiSignStatus(self.clientCode, '02304190230300000040000000000041')
+    #         obj = self.kakaocertService.getMultiSignStatus(self.clientCode, '02309080230400000010000000000011')
     #         print(obj.receiptID)
     #         print(obj.clientCode)
     #         print(obj.state)
@@ -187,10 +195,11 @@ class KakaocertServiceTestCase(unittest.TestCase):
     #     except BarocertException as BE :
     #         print(BE.code)
     #         print(BE.message)
-            
+
+    # # 전자서명(복수) 검증            
     # def test_verifyMultiSign(self) :
     #     try :
-    #         obj = self.kakocertService.verifyMultiSign(self.clientCode, '02304190230300000040000000000041')
+    #         obj = self.kakaocertService.verifyMultiSign(self.clientCode, '02309080230400000010000000000011')
     #         print(obj.receiptID)
     #         print(obj.state)
     #         for multiSignedData in obj.multiSignedData:
@@ -199,35 +208,37 @@ class KakaocertServiceTestCase(unittest.TestCase):
     #     except BarocertException as BE :
     #         print(BE.code)
     #         print(BE.message)
-            
+
+    # # 자동이체 출금동의 요청
     # def test_requestCMS(self):
     #     cms = KakaoCMS(        
-    #         receiverHP = self.kakocertService._encrypt('01012341234'),
-    #         receiverName = self.kakocertService._encrypt('홍길동'),
-    #         receiverBirthday = self.kakocertService._encrypt('19700101'),
+    #         receiverHP = self.kakaocertService._encrypt('01067668440'),
+    #         receiverName = self.kakaocertService._encrypt('정우석'),
+    #         receiverBirthday = self.kakaocertService._encrypt('19900911'),
     #         ci = '',
     #         reqTitle = '인증요청 메시지 제목란',
     #         expireIn = 1000,
-    #         requestCorp = self.kakocertService._encrypt("링크허브"),
-    #         bankName = self.kakocertService._encrypt("국민은행"),
-    #         bankAccountNum = self.kakocertService._encrypt("19-321442-1231"),
-    #         bankAccountName = self.kakocertService._encrypt("홍길동"),
-    #         bankAccountBirthday = self.kakocertService._encrypt("19700101"),
-    #         bankServiceType = self.kakocertService._encrypt("CMS"),
+    #         requestCorp = self.kakaocertService._encrypt("링크허브"),
+    #         bankName = self.kakaocertService._encrypt("국민은행"),
+    #         bankAccountNum = self.kakaocertService._encrypt("19-321442-1231"),
+    #         bankAccountName = self.kakaocertService._encrypt("홍길동"),
+    #         bankAccountBirthday = self.kakaocertService._encrypt("19700101"),
+    #         bankServiceType = self.kakaocertService._encrypt("CMS"),
     #         appUseYN = False,
     #         returnURL = 'https://kakao.barocert.com'
     #     )
         
     #     try :
-    #         obj = self.kakocertService.requestCMS(self.clientCode, cms)
+    #         obj = self.kakaocertService.requestCMS(self.clientCode, cms)
     #         print(obj.receiptID)
     #     except BarocertException as BE :
     #         print(BE.code)
     #         print(BE.message)
             
+    # # 자동이체 출금동의 상태확인            
     # def test_getCMSStatus(self) :
     #     try :
-    #         obj = self.kakocertService.getCMSStatus(self.clientCode, '02304190230300000040000000000042')
+    #         obj = self.kakaocertService.getCMSStatus(self.clientCode, '02309080230400000010000000000013')
     #         print(obj.receiptID)
     #         print(obj.clientCode)
     #         print(obj.state)
@@ -248,9 +259,10 @@ class KakaocertServiceTestCase(unittest.TestCase):
     #         print(BE.code)
     #         print(BE.message)
             
+    # # 자동이체 출금동의 검증            
     # def test_verifyCMS(self) :
     #     try :
-    #         obj = self.kakocertService.verifyCMS(self.clientCode, '02304190230300000040000000000042')
+    #         obj = self.kakaocertService.verifyCMS(self.clientCode, '02309080230400000010000000000013')
     #         print(obj.receiptID)
     #         print(obj.state)
     #         print(obj.signedData)
@@ -259,6 +271,17 @@ class KakaocertServiceTestCase(unittest.TestCase):
     #         print(BE.code)
     #         print(BE.message)
 
+    # # 간편로그인 검증            
+    # def test_verifyLogin(self) :
+    #     try :
+    #         obj = self.kakaocertService.verifyLogin(self.clientCode, '019e25d799-e7b0-4aa0-9d7c-b33f526972b3')
+    #         print(obj.txID)
+    #         print(obj.state)
+    #         print(obj.signedData)
+    #         print(obj.ci)
+    #     except BarocertException as BE :
+    #         print(BE.code)
+    #         print(BE.message)            
 
 
 if __name__ == '__main__':

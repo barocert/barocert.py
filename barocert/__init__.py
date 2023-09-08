@@ -1,4 +1,4 @@
-__version__ = '1.0.2'
+__version__ = '1.1.0'
 Version = __version__  # for backward compatibility
 __all__ = ["BarocertException",
            "KakaoCMS",
@@ -6,8 +6,18 @@ __all__ = ["BarocertException",
            "KakaoSign",
            "KakaoMultiSign",
            "KakaoMultiSignTokens",
-           "KakaocertService"
+           "KakaocertService",
+           "PassCMS",
+           "PassIdentity",
+           "PassLogin",
+           "PassSign",
+           "PassIdentityVerify",
+           "PassSignVerify",
+           "PassCMSVerify",
+           "PassLoginVerify",
+           "PasscertService"
            ]
 
 from .base import *
 from .kakaocertService import *
+from .passcertService import *
