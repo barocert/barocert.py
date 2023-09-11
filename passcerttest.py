@@ -128,6 +128,7 @@ class PasscertServiceTestCase(unittest.TestCase):
     #         print(BE.code)
     #         print(BE.message)
             
+    # # 전자서명 상태확인
     # def test_getSignState(self) :
     #     try :
     #         obj = self.passcertService.getSignStatus(self.clientCode, '02309080230700000140000000000012')
@@ -157,6 +158,7 @@ class PasscertServiceTestCase(unittest.TestCase):
     #         print(BE.code)
     #         print(BE.message)
             
+    # # 전자서명 검증
     # def test_verifySign(self) :
     #     signVerify = PassSignVerify(        
     #         receiverHP = self.passcertService._encrypt('01012341234'),
