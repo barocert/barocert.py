@@ -215,7 +215,6 @@ class KakaocertServiceTestCase(unittest.TestCase):
     #         receiverHP = self.kakaocertService._encrypt('01012341234'),
     #         receiverName = self.kakaocertService._encrypt('홍길동'),
     #         receiverBirthday = self.kakaocertService._encrypt('19700101'),
-    #         ci = '',
     #         reqTitle = '인증요청 메시지 제목란',
     #         expireIn = 1000,
     #         requestCorp = self.kakaocertService._encrypt("링크허브"),
