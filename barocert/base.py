@@ -73,10 +73,10 @@ class BaseService(__with_metaclass(Singleton, object)):
         self.__connectedAt = stime()
         self.__timeOut = timeOut
 
-    def _ServiceURL(self, ServiceURL):
+    def ServiceURL(self, ServiceURL):
         self._ServiceURL = ServiceURL
         
-    def _AuthURL(self, AuthURL):
+    def AuthURL(self, AuthURL):
         linkhub.authURL(AuthURL)
         
     def _getConn(self):
