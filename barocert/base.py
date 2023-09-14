@@ -81,7 +81,25 @@ class BaseService(__with_metaclass(Singleton, object)):
         
     def _getConn(self):
         if self._ServiceURL != None and self._ServiceURL != '':
-            self.__conn = httpclient.HTTPSConnection(self._ServiceURL)
+            if 'https://' in self._ServiceURL :
+                url = self._ServiceURL.replace('https://', '').split(':')
+                host = url[0]
+                if len(url) == 1 :
+                    self.__conn = httpclient.HTTPSConnection(host)
+                elif len(url) > 1 :
+                    port = url[1]
+                    self.__conn = httpclient.HTTPSConnection(host + ":" + port)
+            elif 'http://' in self._ServiceURL :
+                url = self._ServiceURL.replace('http://', '').split(':')
+                host = url[0]
+                if len(url) == 1 :
+                    self.__conn = httpclient.HTTPConnection(host)
+                elif len(url) > 1 :
+                    port = url[1]
+                    self.__conn = httpclient.HTTPConnection(host + ":" + port)
+            else :
+                raise BarocertException(-99999999, 'ServiceURL에 전송 프로토콜(HTTP 또는 HTTPS)을 포함하여 주시기 바랍니다.')
+            self.__connectedAt = stime()
             return self.__conn
 
         if stime() - self.__connectedAt >= self.__timeOut or self.__conn == None:
