@@ -177,6 +177,8 @@ class KakaocertService(BaseService):
             raise BarocertException(-99999999, "인증요청 메시지 제목이 입력되지 않았습니다.")
         if multiSign.expireIn == None or multiSign.expireIn == "":
             raise BarocertException(-99999999, "만료시간이 입력되지 않았습니다.")
+        if self._isNullorEmptyTitle(multiSign.tokens):
+            raise BarocertException(-99999999, "인증요청 메시지 제목이 입력되지 않았습니다.")
         if self._isNullorEmptyToken(multiSign.tokens):
             raise BarocertException(-99999999, "토큰 원문이 입력되지 않았습니다.")
         if multiSign.tokenType == None or multiSign.tokenType == "":
