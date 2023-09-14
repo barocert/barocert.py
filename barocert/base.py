@@ -6,7 +6,7 @@
 # 
 # Author : linkhub dev
 # Written : 2023-03-08
-# Updated : 2023-09-08
+# Updated : 2023-09-14
 # Thanks for your interest.
 
 import json
@@ -14,6 +14,13 @@ import zlib
 import base64
 import hmac
 import json
+
+import sys
+try:
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
+except:
+    pass
 
 from io import BytesIO
 from hashlib import sha256
