@@ -38,7 +38,9 @@ class NavercertService(BaseService):
         if identity.receiverName == None or identity.receiverName == "":
             raise BarocertException(-99999999, "수신자 성명이 입력되지 않았습니다.")
         if identity.receiverBirthday == None or identity.receiverBirthday == "":
-            raise BarocertException(-99999999, "생년월일이 입력되지 않았습니다.")
+            raise BarocertException(-99999999, "수신자 생년월일이 입력되지 않았습니다.")
+        if identity.callCenterNum == None or identity.callCenterNum == "":
+            raise BarocertException(-99999999, "고객센터 연락처가 입력되지 않았습니다.")
         if identity.expireIn == None or identity.expireIn == "":
             raise BarocertException(-99999999, "만료시간이 입력되지 않았습니다.")
         
@@ -99,7 +101,7 @@ class NavercertService(BaseService):
         if sign.receiverName == None or sign.receiverName == "":
             raise BarocertException(-99999999, "수신자 성명이 입력되지 않았습니다.")
         if sign.receiverBirthday == None or sign.receiverBirthday == "":
-            raise BarocertException(-99999999, "생년월일이 입력되지 않았습니다.")
+            raise BarocertException(-99999999, "수신자 생년월일이 입력되지 않았습니다.")
         if sign.reqTitle == None or sign.reqTitle == "":
             raise BarocertException(-99999999, "인증요청 메시지 제목이 입력되지 않았습니다.")
         if sign.reqMessage == None or sign.reqMessage == "":
@@ -169,7 +171,7 @@ class NavercertService(BaseService):
         if multiSign.receiverName == None or multiSign.receiverName == "":
             raise BarocertException(-99999999, "수신자 성명이 입력되지 않았습니다.")
         if multiSign.receiverBirthday == None or multiSign.receiverBirthday == "":
-            raise BarocertException(-99999999, "생년월일이 입력되지 않았습니다.")
+            raise BarocertException(-99999999, "수신자 생년월일이 입력되지 않았습니다.")
         if multiSign.reqTitle == None or multiSign.reqTitle == "":
             raise BarocertException(-99999999, "인증요청 메시지 제목이 입력되지 않았습니다.")
         if multiSign.reqMessage == None or multiSign.reqMessage == "":
