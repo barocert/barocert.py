@@ -24,7 +24,6 @@ class PasscertServiceTestCase(unittest.TestCase):
         self.passcertService = PasscertService('TESTER', 'SwWxqU+0TErBXy/9TVjIPEnI0VTUMMSQZtJf3Ed8q3I=')
         self.passcertService.IPRestrictOnOff = True
         self.passcertService.UseStaticIP = False
-        self.passcertService.UseLocalTimeYN = True
         
         self.clientCode = "023070000014"
         
@@ -34,11 +33,11 @@ class PasscertServiceTestCase(unittest.TestCase):
     #         receiverHP = self.passcertService._encrypt('01012341234'),
     #         receiverName = self.passcertService._encrypt('홍길동'),
     #         receiverBirthday = self.passcertService._encrypt('19700101'),
-    #         reqTitle = '본인인증 요청 메시지 제목란',
+    #         reqTitle = '본인인증 요청 메시지 제목',
     #         reqMessage = self.passcertService._encrypt('본인인증 요청 메시지'),
     #         callCenterNum = '1600-9854',
     #         expireIn = 1000,
-    #         token = self.passcertService._encrypt('본인인증요청토큰'),
+    #         token = self.passcertService._encrypt('본인인증 요청 원문'),
     #         userAgreementYN = True,
     #         receiverInfoYN = True,
     #         appUseYN = False
@@ -107,11 +106,11 @@ class PasscertServiceTestCase(unittest.TestCase):
     #         receiverHP = self.passcertService._encrypt('01012341234'),
     #         receiverName = self.passcertService._encrypt('홍길동'),
     #         receiverBirthday = self.passcertService._encrypt('19700101'),
-    #         reqTitle = '전자서명 요청 메시지 제목란',
+    #         reqTitle = '전자서명 요청 메시지 제목',
     #         reqMessage = self.passcertService._encrypt('전자서명 요청 메시지'),
     #         callCenterNum = '1600-9854',
     #         expireIn = 1000,
-    #         token = self.passcertService._encrypt('전자서명테스트데이터'),
+    #         token = self.passcertService._encrypt('전자서명 요청 원문'),
     #         tokenType = 'HASH',
     #         userAgreementYN = True,
     #         receiverInfoYN = True,
@@ -188,7 +187,7 @@ class PasscertServiceTestCase(unittest.TestCase):
     #         receiverHP = self.passcertService._encrypt('01012341234'),
     #         receiverName = self.passcertService._encrypt('홍길동'),
     #         receiverBirthday = self.passcertService._encrypt('19700101'),
-    #         reqTitle = '출금동의 요청 메시지 제목란',
+    #         reqTitle = '출금동의 요청 메시지 제목',
     #         reqMessage = self.passcertService._encrypt('출금동의 요청 메시지'),
     #         callCenterNum = '1600-9854',
     #         expireIn = 1000,
@@ -266,11 +265,11 @@ class PasscertServiceTestCase(unittest.TestCase):
     #         receiverHP = self.passcertService._encrypt('01012341234'),
     #         receiverName = self.passcertService._encrypt('홍길동'),
     #         receiverBirthday = self.passcertService._encrypt('19700101'),
-    #         reqTitle = '간편로그인 요청 메시지 제목란',
+    #         reqTitle = '간편로그인 요청 메시지 제목',
     #         reqMessage = self.passcertService._encrypt('간편로그인 요청 메시지'),
     #         callCenterNum = '1600-9854',
     #         expireIn = 1000,
-    #         token = self.passcertService._encrypt('간편로그인요청토큰'),
+    #         token = self.passcertService._encrypt('간편로그인 요청 원문'),
     #         userAgreementYN = True,
     #         receiverInfoYN = True,
     #         appUseYN = False
