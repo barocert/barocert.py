@@ -6,6 +6,7 @@
 # 
 # Author : linkhub dev
 # Written : 2023-10-31
+# Updated : 2023-11-06
 # Thanks for your interest.
 
 from .base import BaseService, BarocertException

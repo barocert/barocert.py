@@ -6,7 +6,7 @@
 # 
 # Author : linkhub dev
 # Written : 2023-03-08
-# Updated : 2023-09-08
+# Updated : 2023-11-06
 # Thanks for your interest.
 
 from .base import BaseService, BarocertException
@@ -336,14 +336,6 @@ class PassSign(object):
     def __init__(self, **kwargs):
         self.__dict__ = kwargs
 
-class PassCMS(object):
-    def __init__(self, **kwargs):
-        self.__dict__ = kwargs
-
-class PassIdentity(object):
-    def __init__(self, **kwargs):
-        self.__dict__ = kwargs
-        
 class PassLoginVerify(object):
     def __init__(self, **kwargs):
         self.__dict__ = kwargs        
