@@ -222,6 +222,6 @@ class NavercertServiceTestCase(unittest.TestCase):
     #         print(BE.code)
     #         print(BE.message)
 
-# if __name__ == '__main__':
-#     suite = unittest.TestLoader().loadTestsFromTestCase(NavercertServiceTestCase)
-#     unittest.TextTestRunner(verbosity=2).run(suite)
+if __name__ == '__main__':
+    suite = unittest.TestLoader().loadTestsFromTestCase(NavercertServiceTestCase)
+    unittest.TextTestRunner(verbosity=2).run(suite)
