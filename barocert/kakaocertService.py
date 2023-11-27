@@ -6,7 +6,7 @@
 # 
 # Author : linkhub dev
 # Written : 2023-03-08
-# Updated : 2023-11-06
+# Updated : 2023-11-27
 # Thanks for your interest.
 
 from .base import BaseService, BarocertException
@@ -54,7 +54,7 @@ class KakaocertService(BaseService):
         return self._httppost('/KAKAO/Identity/' + clientCode, postData)
 
     # 본인인증 상태확인
-    def getIdentityStatus(self, clientCode, receiptId):
+    def getIdentityStatus(self, clientCode, receiptID):
 
         if clientCode == None or clientCode == "":
             raise BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.")
@@ -62,18 +62,18 @@ class KakaocertService(BaseService):
             raise BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.")
         if 12 != len(clientCode):
             raise BarocertException(-99999999, "이용기관코드는 12자 입니다.")
-        if receiptId == None or receiptId == "":
+        if receiptID == None or receiptID == "":
             raise BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.")
-        if False == receiptId.isdigit():
+        if False == receiptID.isdigit():
             raise BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.")
-        if 32 != len(receiptId):
+        if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
         
 
-        return self._httpget('/KAKAO/Identity/' + clientCode + '/' + receiptId )
+        return self._httpget('/KAKAO/Identity/' + clientCode + '/' + receiptID )
     
     # 본인인증 검증
-    def verifyIdentity(self, clientCode, receiptId):
+    def verifyIdentity(self, clientCode, receiptID):
 
         if clientCode == None or clientCode == "":
             raise BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.")
@@ -81,14 +81,14 @@ class KakaocertService(BaseService):
             raise BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.")
         if 12 != len(clientCode):
             raise BarocertException(-99999999, "이용기관코드는 12자 입니다.")
-        if receiptId == None or receiptId == "":
+        if receiptID == None or receiptID == "":
             raise BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.")
-        if False == receiptId.isdigit():
+        if False == receiptID.isdigit():
             raise BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.")
-        if 32 != len(receiptId):
+        if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
 
-        return self._httppost('/KAKAO/Identity/' + clientCode + '/' + receiptId )
+        return self._httppost('/KAKAO/Identity/' + clientCode + '/' + receiptID )
 
     # 전자서명 요청(단건)
     def requestSign(self, clientCode, sign):
@@ -121,7 +121,7 @@ class KakaocertService(BaseService):
         return self._httppost('/KAKAO/Sign/' + clientCode, postData)
 
     # 전자서명 상태확인(단건)
-    def getSignStatus(self, clientCode, receiptId):
+    def getSignStatus(self, clientCode, receiptID):
 
         if clientCode == None or clientCode == "":
             raise BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.")
@@ -129,17 +129,17 @@ class KakaocertService(BaseService):
             raise BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.")
         if 12 != len(clientCode):
             raise BarocertException(-99999999, "이용기관코드는 12자 입니다.")
-        if receiptId == None or receiptId == "":
+        if receiptID == None or receiptID == "":
             raise BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.")
-        if False == receiptId.isdigit():
+        if False == receiptID.isdigit():
             raise BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.")
-        if 32 != len(receiptId):
+        if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
 
-        return self._httpget('/KAKAO/Sign/' + clientCode + '/' + receiptId)
+        return self._httpget('/KAKAO/Sign/' + clientCode + '/' + receiptID)
 
     # 전자서명 검증(단건)
-    def verifySign(self, clientCode, receiptId):
+    def verifySign(self, clientCode, receiptID):
 
         if clientCode == None or clientCode == "":
             raise BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.")
@@ -147,14 +147,14 @@ class KakaocertService(BaseService):
             raise BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.")
         if 12 != len(clientCode):
             raise BarocertException(-99999999, "이용기관코드는 12자 입니다.")
-        if receiptId == None or receiptId == "":
+        if receiptID == None or receiptID == "":
             raise BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.")
-        if False == receiptId.isdigit():
+        if False == receiptID.isdigit():
             raise BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.")
-        if 32 != len(receiptId):
+        if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
 
-        return self._httppost('/KAKAO/Sign/' + clientCode + '/' + receiptId)
+        return self._httppost('/KAKAO/Sign/' + clientCode + '/' + receiptID)
     
     # 전자서명 요청(복수)
     def requestMultiSign(self, clientCode, multiSign):
@@ -189,7 +189,7 @@ class KakaocertService(BaseService):
         return self._httppost('/KAKAO/MultiSign/' + clientCode, postData)
 
     # 전자서명 상태확인(복수)	
-    def getMultiSignStatus(self, clientCode, receiptId):
+    def getMultiSignStatus(self, clientCode, receiptID):
 
         if clientCode == None or clientCode == "":
             raise BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.")
@@ -197,18 +197,18 @@ class KakaocertService(BaseService):
             raise BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.")
         if 12 != len(clientCode):
             raise BarocertException(-99999999, "이용기관코드는 12자 입니다.")
-        if receiptId == None or receiptId == "":
+        if receiptID == None or receiptID == "":
             raise BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.")
-        if False == receiptId.isdigit():
+        if False == receiptID.isdigit():
             raise BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.")
-        if 32 != len(receiptId):
+        if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
 
-        return self._httpget('/KAKAO/MultiSign/' + clientCode + '/' + receiptId)
+        return self._httpget('/KAKAO/MultiSign/' + clientCode + '/' + receiptID)
 
 
     # 전자서명 검증(복수)
-    def verifyMultiSign(self, clientCode, receiptId):
+    def verifyMultiSign(self, clientCode, receiptID):
 
         if clientCode == None or clientCode == "":
             raise BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.")
@@ -216,14 +216,14 @@ class KakaocertService(BaseService):
             raise BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.")
         if 12 != len(clientCode):
             raise BarocertException(-99999999, "이용기관코드는 12자 입니다.")
-        if receiptId == None or receiptId == "":
+        if receiptID == None or receiptID == "":
             raise BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.")
-        if False == receiptId.isdigit():
+        if False == receiptID.isdigit():
             raise BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.")
-        if 32 != len(receiptId):
+        if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
         
-        return self._httppost('/KAKAO/MultiSign/' + clientCode + '/' + receiptId)
+        return self._httppost('/KAKAO/MultiSign/' + clientCode + '/' + receiptID)
 
     # 출금동의 요청
     def requestCMS(self, clientCode, cms):
@@ -264,7 +264,7 @@ class KakaocertService(BaseService):
         return self._httppost('/KAKAO/CMS/' + clientCode, postData)
 
     # 출금동의 상태확인
-    def getCMSStatus(self, clientCode, receiptId):
+    def getCMSStatus(self, clientCode, receiptID):
 
         if clientCode == None or clientCode == "":
             raise BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.")
@@ -272,17 +272,17 @@ class KakaocertService(BaseService):
             raise BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.")
         if 12 != len(clientCode):
             raise BarocertException(-99999999, "이용기관코드는 12자 입니다.")
-        if receiptId == None or receiptId == "":
+        if receiptID == None or receiptID == "":
             raise BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.")
-        if False == receiptId.isdigit():
+        if False == receiptID.isdigit():
             raise BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.")
-        if 32 != len(receiptId):
+        if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
 
-        return self._httpget('/KAKAO/CMS/' + clientCode + '/' + receiptId)
+        return self._httpget('/KAKAO/CMS/' + clientCode + '/' + receiptID)
 
     # 출금동의 검증
-    def verifyCMS(self, clientCode, receiptId):
+    def verifyCMS(self, clientCode, receiptID):
 
         if clientCode == None or clientCode == "":
             raise BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.")
@@ -290,14 +290,14 @@ class KakaocertService(BaseService):
             raise BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.")
         if 12 != len(clientCode):
             raise BarocertException(-99999999, "이용기관코드는 12자 입니다.")
-        if receiptId == None or receiptId == "":
+        if receiptID == None or receiptID == "":
             raise BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.")
-        if False == receiptId.isdigit():
+        if False == receiptID.isdigit():
             raise BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.")
-        if 32 != len(receiptId):
+        if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
         
-        return self._httppost('/KAKAO/CMS/' + clientCode + '/' + receiptId)
+        return self._httppost('/KAKAO/CMS/' + clientCode + '/' + receiptID)
     
     # 간편로그인 검증
     def verifyLogin(self, clientCode, txID):

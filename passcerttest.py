@@ -45,7 +45,7 @@ class PasscertServiceTestCase(unittest.TestCase):
 
     #     try :
     #         obj = self.passcertService.requestIdentity(self.clientCode, identity)
-    #         print(obj.receiptId)
+    #         print(obj.receiptID)
     #     except BarocertException as BE :
     #         print(BE.code)
     #         print(BE.message)
@@ -122,7 +122,7 @@ class PasscertServiceTestCase(unittest.TestCase):
         
     #     try :
     #         obj = self.passcertService.requestSign(self.clientCode, sign)
-    #         print(obj.receiptId)
+    #         print(obj.receiptID)
     #     except BarocertException as BE :
     #         print(BE.code)
     #         print(BE.message)
@@ -203,7 +203,7 @@ class PasscertServiceTestCase(unittest.TestCase):
         
     #     try :
     #         obj = self.passcertService.requestCMS(self.clientCode, cms)
-    #         print(obj.receiptId)
+    #         print(obj.receiptID)
     #     except BarocertException as BE :
     #         print(BE.code)
     #         print(BE.message)
@@ -277,7 +277,7 @@ class PasscertServiceTestCase(unittest.TestCase):
         
     #     try :
     #         obj = self.passcertService.requestLogin(self.clientCode, login)
-    #         print(obj.receiptId)
+    #         print(obj.receiptID)
     #     except BarocertException as BE :
     #         print(BE.code)
     #         print(BE.message)

@@ -6,7 +6,7 @@
 # 
 # Author : linkhub dev
 # Written : 2023-03-08
-# Updated : 2023-11-06
+# Updated : 2023-11-27
 # Thanks for your interest.
 
 from .base import BaseService, BarocertException
@@ -53,7 +53,7 @@ class PasscertService(BaseService):
         return self._httppost('/PASS/Identity/' + clientCode, postData)
 
     # 본인인증 상태확인
-    def getIdentityStatus(self, clientCode, receiptId):
+    def getIdentityStatus(self, clientCode, receiptID):
 
         if clientCode == None or clientCode == "":
             raise BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.")
@@ -61,17 +61,17 @@ class PasscertService(BaseService):
             raise BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.")
         if 12 != len(clientCode):
             raise BarocertException(-99999999, "이용기관코드는 12자 입니다.")
-        if receiptId == None or receiptId == "":
+        if receiptID == None or receiptID == "":
             raise BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.")
-        if False == receiptId.isdigit():
+        if False == receiptID.isdigit():
             raise BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.")
-        if 32 != len(receiptId):
+        if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
         
-        return self._httpget('/PASS/Identity/' + clientCode + '/' + receiptId )
+        return self._httpget('/PASS/Identity/' + clientCode + '/' + receiptID )
     
     # 본인인증 검증
-    def verifyIdentity(self, clientCode, receiptId, identityVerify):
+    def verifyIdentity(self, clientCode, receiptID, identityVerify):
 
         if clientCode == None or clientCode == "":
             raise BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.")
@@ -79,11 +79,11 @@ class PasscertService(BaseService):
             raise BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.")
         if 12 != len(clientCode):
             raise BarocertException(-99999999, "이용기관코드는 12자 입니다.")
-        if receiptId == None or receiptId == "":
+        if receiptID == None or receiptID == "":
             raise BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.")
-        if False == receiptId.isdigit():
+        if False == receiptID.isdigit():
             raise BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.")
-        if 32 != len(receiptId):
+        if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
         if identityVerify == None or identityVerify == "":
             raise BarocertException(-99999999, "본인인증 검증 요청 정보가 입력되지 않았습니다.")
@@ -94,7 +94,7 @@ class PasscertService(BaseService):
 
         postData = self._stringtify(identityVerify)
 
-        return self._httppost('/PASS/Identity/' + clientCode + '/' + receiptId, postData)
+        return self._httppost('/PASS/Identity/' + clientCode + '/' + receiptID, postData)
 
     # 전자서명 요청
     def requestSign(self, clientCode, sign):
@@ -127,7 +127,7 @@ class PasscertService(BaseService):
         return self._httppost('/PASS/Sign/' + clientCode, postData)
 
     # 전자서명 상태확인
-    def getSignStatus(self, clientCode, receiptId):
+    def getSignStatus(self, clientCode, receiptID):
 
         if clientCode == None or clientCode == "":
             raise BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.")
@@ -135,17 +135,17 @@ class PasscertService(BaseService):
             raise BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.")
         if 12 != len(clientCode):
             raise BarocertException(-99999999, "이용기관코드는 12자 입니다.")
-        if receiptId == None or receiptId == "":
+        if receiptID == None or receiptID == "":
             raise BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.")
-        if False == receiptId.isdigit():
+        if False == receiptID.isdigit():
             raise BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.")
-        if 32 != len(receiptId):
+        if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
 
-        return self._httpget('/PASS/Sign/' + clientCode + '/' + receiptId)
+        return self._httpget('/PASS/Sign/' + clientCode + '/' + receiptID)
 
     # 전자서명 검증
-    def verifySign(self, clientCode, receiptId, signVerify):
+    def verifySign(self, clientCode, receiptID, signVerify):
 
         if clientCode == None or clientCode == "":
             raise BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.")
@@ -153,11 +153,11 @@ class PasscertService(BaseService):
             raise BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.")
         if 12 != len(clientCode):
             raise BarocertException(-99999999, "이용기관코드는 12자 입니다.")
-        if receiptId == None or receiptId == "":
+        if receiptID == None or receiptID == "":
             raise BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.")
-        if False == receiptId.isdigit():
+        if False == receiptID.isdigit():
             raise BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.")
-        if 32 != len(receiptId):
+        if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
         if signVerify == None or signVerify == "":
             raise BarocertException(-99999999, "전자서명 검증 요청 정보가 입력되지 않았습니다.")
@@ -168,7 +168,7 @@ class PasscertService(BaseService):
 
         postData = self._stringtify(signVerify)    
 
-        return self._httppost('/PASS/Sign/' + clientCode + '/' + receiptId, postData)
+        return self._httppost('/PASS/Sign/' + clientCode + '/' + receiptID, postData)
     
     # 출금동의 요청
     def requestCMS(self, clientCode, cms):
@@ -205,7 +205,7 @@ class PasscertService(BaseService):
         return self._httppost('/PASS/CMS/' + clientCode, postData)
 
     # 출금동의 상태확인
-    def getCMSStatus(self, clientCode, receiptId):
+    def getCMSStatus(self, clientCode, receiptID):
 
         if clientCode == None or clientCode == "":
             raise BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.")
@@ -213,17 +213,17 @@ class PasscertService(BaseService):
             raise BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.")
         if 12 != len(clientCode):
             raise BarocertException(-99999999, "이용기관코드는 12자 입니다.")
-        if receiptId == None or receiptId == "":
+        if receiptID == None or receiptID == "":
             raise BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.")
-        if False == receiptId.isdigit():
+        if False == receiptID.isdigit():
             raise BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.")
-        if 32 != len(receiptId):
+        if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
 
-        return self._httpget('/PASS/CMS/' + clientCode + '/' + receiptId)
+        return self._httpget('/PASS/CMS/' + clientCode + '/' + receiptID)
 
     # 출금동의 검증
-    def verifyCMS(self, clientCode, receiptId, cmsVerify):
+    def verifyCMS(self, clientCode, receiptID, cmsVerify):
 
         if clientCode == None or clientCode == "":
             raise BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.")
@@ -231,11 +231,11 @@ class PasscertService(BaseService):
             raise BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.")
         if 12 != len(clientCode):
             raise BarocertException(-99999999, "이용기관코드는 12자 입니다.")
-        if receiptId == None or receiptId == "":
+        if receiptID == None or receiptID == "":
             raise BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.")
-        if False == receiptId.isdigit():
+        if False == receiptID.isdigit():
             raise BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.")
-        if 32 != len(receiptId):
+        if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
         if cmsVerify == None or cmsVerify == "":
             raise BarocertException(-99999999, "자동이체 출금동의 검증 요청 정보가 입력되지 않았습니다.")
@@ -246,7 +246,7 @@ class PasscertService(BaseService):
         
         postData = self._stringtify(cmsVerify)
 
-        return self._httppost('/PASS/CMS/' + clientCode + '/' + receiptId, postData)
+        return self._httppost('/PASS/CMS/' + clientCode + '/' + receiptID, postData)
     
     # 간편로그인 요청
     def requestLogin(self, clientCode, login):
@@ -277,7 +277,7 @@ class PasscertService(BaseService):
         return self._httppost('/PASS/Login/' + clientCode, postData)
 
     # 간편로그인 상태확인
-    def getLoginStatus(self, clientCode, receiptId):
+    def getLoginStatus(self, clientCode, receiptID):
 
         if clientCode == None or clientCode == "":
             raise BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.")
@@ -285,17 +285,17 @@ class PasscertService(BaseService):
             raise BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.")
         if 12 != len(clientCode):
             raise BarocertException(-99999999, "이용기관코드는 12자 입니다.")
-        if receiptId == None or receiptId == "":
+        if receiptID == None or receiptID == "":
             raise BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.")
-        if False == receiptId.isdigit():
+        if False == receiptID.isdigit():
             raise BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.")
-        if 32 != len(receiptId):
+        if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
         
-        return self._httpget('/PASS/Login/' + clientCode + '/' + receiptId )
+        return self._httpget('/PASS/Login/' + clientCode + '/' + receiptID )
     
     # 간편로그인 검증
-    def verifyLogin(self, clientCode, receiptId, loginVerify):
+    def verifyLogin(self, clientCode, receiptID, loginVerify):
 
         if clientCode == None or clientCode == "":
             raise BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.")
@@ -303,11 +303,11 @@ class PasscertService(BaseService):
             raise BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.")
         if 12 != len(clientCode):
             raise BarocertException(-99999999, "이용기관코드는 12자 입니다.")
-        if receiptId == None or receiptId == "":
+        if receiptID == None or receiptID == "":
             raise BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.")
-        if False == receiptId.isdigit():
+        if False == receiptID.isdigit():
             raise BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.")
-        if 32 != len(receiptId):
+        if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
         if loginVerify == None or loginVerify == "":
             raise BarocertException(-99999999, "본인인증 검증 요청 정보가 입력되지 않았습니다.")
@@ -318,7 +318,7 @@ class PasscertService(BaseService):
 
         postData = self._stringtify(loginVerify)
 
-        return self._httppost('/PASS/Login/' + clientCode + '/' + receiptId, postData)
+        return self._httppost('/PASS/Login/' + clientCode + '/' + receiptID, postData)
 
 class PassCMS(object):
     def __init__(self, **kwargs):

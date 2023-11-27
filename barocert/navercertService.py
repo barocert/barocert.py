@@ -6,7 +6,7 @@
 # 
 # Author : linkhub dev
 # Written : 2023-10-31
-# Updated : 2023-11-06
+# Updated : 2023-11-27
 # Thanks for your interest.
 
 from .base import BaseService, BarocertException
@@ -50,7 +50,7 @@ class NavercertService(BaseService):
         return self._httppost('/NAVER/Identity/' + clientCode, postData)
 
     # 본인인증 상태확인
-    def getIdentityStatus(self, clientCode, receiptId):
+    def getIdentityStatus(self, clientCode, receiptID):
 
         if clientCode == None or clientCode == "":
             raise BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.")
@@ -58,18 +58,18 @@ class NavercertService(BaseService):
             raise BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.")
         if 12 != len(clientCode):
             raise BarocertException(-99999999, "이용기관코드는 12자 입니다.")
-        if receiptId == None or receiptId == "":
+        if receiptID == None or receiptID == "":
             raise BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.")
-        if False == receiptId.isdigit():
+        if False == receiptID.isdigit():
             raise BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.")
-        if 32 != len(receiptId):
+        if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
         
 
-        return self._httpget('/NAVER/Identity/' + clientCode + '/' + receiptId )
+        return self._httpget('/NAVER/Identity/' + clientCode + '/' + receiptID )
     
     # 본인인증 검증
-    def verifyIdentity(self, clientCode, receiptId):
+    def verifyIdentity(self, clientCode, receiptID):
 
         if clientCode == None or clientCode == "":
             raise BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.")
@@ -77,14 +77,14 @@ class NavercertService(BaseService):
             raise BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.")
         if 12 != len(clientCode):
             raise BarocertException(-99999999, "이용기관코드는 12자 입니다.")
-        if receiptId == None or receiptId == "":
+        if receiptID == None or receiptID == "":
             raise BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.")
-        if False == receiptId.isdigit():
+        if False == receiptID.isdigit():
             raise BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.")
-        if 32 != len(receiptId):
+        if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
 
-        return self._httppost('/NAVER/Identity/' + clientCode + '/' + receiptId )
+        return self._httppost('/NAVER/Identity/' + clientCode + '/' + receiptID )
 
     # 전자서명 요청(단건)
     def requestSign(self, clientCode, sign):
@@ -121,7 +121,7 @@ class NavercertService(BaseService):
         return self._httppost('/NAVER/Sign/' + clientCode, postData)
 
     # 전자서명 상태확인(단건)
-    def getSignStatus(self, clientCode, receiptId):
+    def getSignStatus(self, clientCode, receiptID):
 
         if clientCode == None or clientCode == "":
             raise BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.")
@@ -129,17 +129,17 @@ class NavercertService(BaseService):
             raise BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.")
         if 12 != len(clientCode):
             raise BarocertException(-99999999, "이용기관코드는 12자 입니다.")
-        if receiptId == None or receiptId == "":
+        if receiptID == None or receiptID == "":
             raise BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.")
-        if False == receiptId.isdigit():
+        if False == receiptID.isdigit():
             raise BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.")
-        if 32 != len(receiptId):
+        if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
 
-        return self._httpget('/NAVER/Sign/' + clientCode + '/' + receiptId)
+        return self._httpget('/NAVER/Sign/' + clientCode + '/' + receiptID)
 
     # 전자서명 검증(단건)
-    def verifySign(self, clientCode, receiptId):
+    def verifySign(self, clientCode, receiptID):
 
         if clientCode == None or clientCode == "":
             raise BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.")
@@ -147,14 +147,14 @@ class NavercertService(BaseService):
             raise BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.")
         if 12 != len(clientCode):
             raise BarocertException(-99999999, "이용기관코드는 12자 입니다.")
-        if receiptId == None or receiptId == "":
+        if receiptID == None or receiptID == "":
             raise BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.")
-        if False == receiptId.isdigit():
+        if False == receiptID.isdigit():
             raise BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.")
-        if 32 != len(receiptId):
+        if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
 
-        return self._httppost('/NAVER/Sign/' + clientCode + '/' + receiptId)
+        return self._httppost('/NAVER/Sign/' + clientCode + '/' + receiptID)
     
     # 전자서명 요청(복수)
     def requestMultiSign(self, clientCode, multiSign):
@@ -191,7 +191,7 @@ class NavercertService(BaseService):
         return self._httppost('/NAVER/MultiSign/' + clientCode, postData)
 
     # 전자서명 상태확인(복수)	
-    def getMultiSignStatus(self, clientCode, receiptId):
+    def getMultiSignStatus(self, clientCode, receiptID):
 
         if clientCode == None or clientCode == "":
             raise BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.")
@@ -199,18 +199,18 @@ class NavercertService(BaseService):
             raise BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.")
         if 12 != len(clientCode):
             raise BarocertException(-99999999, "이용기관코드는 12자 입니다.")
-        if receiptId == None or receiptId == "":
+        if receiptID == None or receiptID == "":
             raise BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.")
-        if False == receiptId.isdigit():
+        if False == receiptID.isdigit():
             raise BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.")
-        if 32 != len(receiptId):
+        if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
 
-        return self._httpget('/NAVER/MultiSign/' + clientCode + '/' + receiptId)
+        return self._httpget('/NAVER/MultiSign/' + clientCode + '/' + receiptID)
 
 
     # 전자서명 검증(복수)
-    def verifyMultiSign(self, clientCode, receiptId):
+    def verifyMultiSign(self, clientCode, receiptID):
 
         if clientCode == None or clientCode == "":
             raise BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.")
@@ -218,14 +218,14 @@ class NavercertService(BaseService):
             raise BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.")
         if 12 != len(clientCode):
             raise BarocertException(-99999999, "이용기관코드는 12자 입니다.")
-        if receiptId == None or receiptId == "":
+        if receiptID == None or receiptID == "":
             raise BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.")
-        if False == receiptId.isdigit():
+        if False == receiptID.isdigit():
             raise BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.")
-        if 32 != len(receiptId):
+        if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
         
-        return self._httppost('/NAVER/MultiSign/' + clientCode + '/' + receiptId)
+        return self._httppost('/NAVER/MultiSign/' + clientCode + '/' + receiptID)
 
     def _isNullorEmptyTokenType(self, multiSignTokens):
         if multiSignTokens == None or multiSignTokens == "":
