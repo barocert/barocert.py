@@ -107,7 +107,7 @@ class KakaocertService(BaseService):
             raise BarocertException(-99999999, "수신자 성명이 입력되지 않았습니다.")
         if sign.receiverBirthday == None or sign.receiverBirthday == "":
             raise BarocertException(-99999999, "생년월일이 입력되지 않았습니다.")
-        if sign.reqTitle == None or sign.reqTitle == "":
+        if (sign.signTitle == None or sign.signTitle == "") and (sign.reqTitle == None or sign.reqTitle == ""):
             raise BarocertException(-99999999, "인증요청 메시지 제목이 입력되지 않았습니다.")
         if sign.expireIn == None or sign.expireIn == "":
             raise BarocertException(-99999999, "만료시간이 입력되지 않았습니다.")
@@ -319,7 +319,7 @@ class KakaocertService(BaseService):
         if len(multiSignTokens) == 0:
             return True
         for multiSignToken in multiSignTokens:
-            if multiSignToken.reqTitle == None or multiSignToken.reqTitle == "":
+            if (multiSignToken.reqTitle == None or multiSignToken.reqTitle == "") and (multiSignToken.reqTitle == None or multiSignToken.reqTitle == ""):
                 return True
         return False
     
