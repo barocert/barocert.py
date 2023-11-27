@@ -34,6 +34,7 @@ class KakaocertServiceTestCase(unittest.TestCase):
     #         receiverName = self.kakaocertService._encrypt('홍길동'),
     #         receiverBirthday = self.kakaocertService._encrypt('19700101'),
     #         reqTitle = '본인인증 요청 메시지 제목',
+    #         extraMessage = self.kakaocertService._encrypt('본인인증 커스텀 메시지'),
     #         expireIn = 1000,
     #         token = self.kakaocertService._encrypt('본인인증 요청 원문'),
     #         appUseYN = False,
@@ -89,7 +90,8 @@ class KakaocertServiceTestCase(unittest.TestCase):
     #         receiverHP = self.kakaocertService._encrypt('01012341234'),
     #         receiverName = self.kakaocertService._encrypt('홍길동'),
     #         receiverBirthday = self.kakaocertService._encrypt('19700101'),
-    #         reqTitle = '전자서명(단건) 요청 메시지 제목',
+    #         signTitle = '전자서명(단건) 서명 요청 제목',
+    #         extraMessage = self.kakaocertService._encrypt('전자서명(단건) 커스텀 메시지'),
     #         expireIn = 1000,
     #         token = self.kakaocertService._encrypt('전자서명(단건) 요청 원문'),
     #         tokenType = 'TEXT',
@@ -147,7 +149,7 @@ class KakaocertServiceTestCase(unittest.TestCase):
     #     for x in range(0,5):
     #         multiSignTokens.append(
     #             KakaoMultiSignTokens(
-    #                 reqTitle = "전자서명(복수) 요청 메시지 제목" + str(x),
+    #                 signTitle = "전자서명(복수) 서명 요청 제목" + str(x),
     #                 token = self.kakaocertService._encrypt("전자서명(복수) 요청 원문" + str(x)) 
     #             )
     #         )    
@@ -157,6 +159,7 @@ class KakaocertServiceTestCase(unittest.TestCase):
     #         receiverName = self.kakaocertService._encrypt('홍길동'),
     #         receiverBirthday = self.kakaocertService._encrypt('19700101'),
     #         reqTitle = '전자서명(복수) 요청 메시지 제목',
+    #         extraMessage = self.kakaocertService._encrypt('전자서명(복수) 커스텀 메시지'),
     #         expireIn = 1000,
     #         tokens = multiSignTokens,
     #         tokenType = 'TEXT',
@@ -170,7 +173,7 @@ class KakaocertServiceTestCase(unittest.TestCase):
     #     except BarocertException as BE :
     #         print(BE.code)
     #         print(BE.message)
-            
+        
     # # 전자서명(복수) 상태확인            
     # def test_getMultiSignState(self) :
     #     try :
@@ -215,6 +218,7 @@ class KakaocertServiceTestCase(unittest.TestCase):
     #         receiverName = self.kakaocertService._encrypt('홍길동'),
     #         receiverBirthday = self.kakaocertService._encrypt('19700101'),
     #         reqTitle = '출금동의 요청 메시지 제목',
+    #         extraMessage = self.kakaocertService._encrypt('출금동의 커스텀 메시지'),
     #         expireIn = 1000,
     #         requestCorp = self.kakaocertService._encrypt("링크허브"),
     #         bankName = self.kakaocertService._encrypt("국민은행"),
