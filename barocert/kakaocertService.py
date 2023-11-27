@@ -319,7 +319,7 @@ class KakaocertService(BaseService):
         if len(multiSignTokens) == 0:
             return True
         for multiSignToken in multiSignTokens:
-            if (multiSignToken.reqTitle == None or multiSignToken.reqTitle == "") and (multiSignToken.reqTitle == None or multiSignToken.reqTitle == ""):
+            if (multiSignToken.signTitle == None or multiSignToken.signTitle == "") and (multiSignToken.reqTitle == None or multiSignToken.reqTitle == ""):
                 return True
         return False
     
