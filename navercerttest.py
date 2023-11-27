@@ -18,14 +18,14 @@ from datetime import datetime
 from barocert import *
 
 
-# class NavercertServiceTestCase(unittest.TestCase):
-#     @classmethod
-#     def setUpClass(self):
-#         self.navercertService = NavercertService('TESTER', 'SwWxqU+0TErBXy/9TVjIPEnI0VTUMMSQZtJf3Ed8q3I=')
-#         self.navercertService.IPRestrictOnOff = True
-#         self.navercertService.UseStaticIP = False
+class NavercertServiceTestCase(unittest.TestCase):
+    @classmethod
+    def setUpClass(self):
+        self.navercertService = NavercertService('TESTER', 'SwWxqU+0TErBXy/9TVjIPEnI0VTUMMSQZtJf3Ed8q3I=')
+        self.navercertService.IPRestrictOnOff = True
+        self.navercertService.UseStaticIP = False
         
-#         self.clientCode = "023090000021"
+        self.clientCode = "023090000021"
 
     # 본인인증 요청
     # def test_requestIdentity(self):
