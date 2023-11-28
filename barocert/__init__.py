@@ -1,4 +1,4 @@
-__version__ = '1.2.1'
+__version__ = '1.2.2'
 Version = __version__  # for backward compatibility
 __all__ = ["BarocertException",
            "KakaoCMS",
