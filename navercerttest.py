@@ -54,15 +54,7 @@ class NavercertServiceTestCase(unittest.TestCase):
     #         print(obj.receiptID)
     #         print(obj.clientCode)
     #         print(obj.state)
-    #         print(obj.expireIn)
-    #         print(obj.callCenterName)
-    #         print(obj.callCenterNum)
-    #         print(obj.reqTitle)
-    #         print(obj.deviceOSType)
-    #         print(obj.returnURL)
     #         print(obj.expireDT)
-    #         print(obj.scheme)
-    #         print(obj.appUseYN)
     #     except BarocertException as BE :
     #         print(BE.code)
     #         print(BE.message)
@@ -120,16 +112,7 @@ class NavercertServiceTestCase(unittest.TestCase):
     #         print(obj.receiptID)
     #         print(obj.clientCode)
     #         print(obj.state)
-    #         print(obj.expireIn)
-    #         print(obj.callCenterName)
-    #         print(obj.callCenterNum)
-    #         print(obj.reqTitle)
-    #         print(obj.tokenType)
-    #         print(obj.deviceOSType)
-    #         print(obj.returnURL)
     #         print(obj.expireDT)
-    #         print(obj.scheme)
-    #         print(obj.appUseYN)
     #     except BarocertException as BE :
     #         print(BE.code)
     #         print(BE.message)
@@ -195,16 +178,7 @@ class NavercertServiceTestCase(unittest.TestCase):
     #         print(obj.receiptID)
     #         print(obj.clientCode)
     #         print(obj.state)
-    #         print(obj.expireIn)
-    #         print(obj.callCenterName)
-    #         print(obj.callCenterNum)
-    #         print(obj.reqTitle)
-    #         print(obj.tokenTypes)
-    #         print(obj.deviceOSType)
-    #         print(obj.returnURL)
     #         print(obj.expireDT)
-    #         print(obj.scheme)
-    #         print(obj.appUseYN)
     #     except BarocertException as BE :
     #         print(BE.code)
     #         print(BE.message)
@@ -236,14 +210,14 @@ class NavercertServiceTestCase(unittest.TestCase):
     #         receiverName = self.navercertService._encrypt('홍길동'),
     #         receiverBirthday = self.navercertService._encrypt('19700101'),
     #         reqTitle = '출금동의 요청 메시지 제목',
-    #         reqMessage = navercertService._encrypt('출금동의 요청 메시지'),
+    #         reqMessage = self.navercertService._encrypt('출금동의 요청 메시지'),
     #         callCenterNum = '1588-1600',
     #         expireIn = 1000,
-    #         requestCorp = navercertService._encrypt('청구기관'),    
-    #         bankName = navercertService._encrypt('출금은행'),    
-    #         bankAccountNum = navercertService._encrypt('123-456-7890'),    
-    #         bankAccountName = navercertService._encrypt('홍길동'),    
-    #         bankAccountBirthday = navercertService._encrypt('19700101'),    
+    #         requestCorp = self.navercertService._encrypt('청구기관'),    
+    #         bankName = self.navercertService._encrypt('출금은행'),    
+    #         bankAccountNum = self.navercertService._encrypt('123-456-7890'),    
+    #         bankAccountName = self.navercertService._encrypt('홍길동'),    
+    #         bankAccountBirthday = self.navercertService._encrypt('19700101'),    
     #         appUseYN = False,
     #         deviceOSType = 'IOS',
     #         returnURL = 'navercert://cms',

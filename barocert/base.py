@@ -283,8 +283,8 @@ class Utils:
 
     @staticmethod
     def sha256URLEncoding(target):
-        hashed = hashlib.sha256(target).digest()
-        return base64.urlsafe_b64encode(sha256_hash).rstrip(b'=').decode()
+        hashed = hashlib.sha256(target.encode('utf-8')).digest()
+        return base64.urlsafe_b64encode(hashed).rstrip(b'=').decode()
 
 class BarocertException(Exception):
     def __init__(self, code, message):
