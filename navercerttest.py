@@ -36,7 +36,8 @@ class NavercertServiceTestCase(unittest.TestCase):
     #         callCenterNum = '1588-1600',
     #         expireIn = 1000,
     #         appUseYN = False,
-    #         returnURL = 'navercert://Sign',
+    #         deviceOSType = 'IOS',
+    #         returnURL = 'navercert://Identity',
     #     )
         
     #     try :
@@ -99,6 +100,7 @@ class NavercertServiceTestCase(unittest.TestCase):
     #         token = self.navercertService._encrypt('전자서명(단건) 요청 원문'),
     #         tokenType = 'TEXT',
     #         appUseYN = False,
+    #         deviceOSType = 'IOS',
     #         returnURL = 'navercert://Sign'
     #     )
         
@@ -171,6 +173,7 @@ class NavercertServiceTestCase(unittest.TestCase):
     #         expireIn = 1000,
     #         tokens = multiSignTokens,
     #         appUseYN = False,
+    #         deviceOSType = 'IOS',
     #         returnURL = 'navercert://Sign'
     #     )
         
@@ -218,6 +221,65 @@ class NavercertServiceTestCase(unittest.TestCase):
     #         print(obj.receiverGender)
     #         print(obj.receiverEmail)
     #         print(obj.receiverForeign)
+    #     except BarocertException as BE :
+    #         print(BE.code)
+    #         print(BE.message)
+
+    # 출금동의 요청
+    # def test_requestCMS(self):
+    #     cms = NaverCMS(        
+    #         receiverHP = self.navercertService._encrypt('01012341234'),
+    #         receiverName = self.navercertService._encrypt('홍길동'),
+    #         receiverBirthday = self.navercertService._encrypt('19700101'),
+    #         reqTitle = '출금동의 요청 메시지 제목',
+    #         reqMessage = navercertService._encrypt('출금동의 요청 메시지'),
+    #         callCenterNum = '1588-1600',
+    #         expireIn = 1000,
+    #         requestCorp = navercertService._encrypt('청구기관'),    
+    #         bankName = navercertService._encrypt('출금은행'),    
+    #         bankAccountNum = navercertService._encrypt('123-456-7890'),    
+    #         bankAccountName = navercertService._encrypt('홍길동'),    
+    #         bankAccountBirthday = navercertService._encrypt('19700101'),    
+    #         appUseYN = False,
+    #         deviceOSType = 'IOS',
+    #         returnURL = 'navercert://cms',
+    #     )
+    
+    #     try :
+    #         obj = self.navercertService.requestCMS(self.clientCode, cms)
+    #         print(obj.receiptID)
+    #     except BarocertException as BE :
+    #         print(BE.code)
+    #         print(BE.message)
+
+    # 출금동의 상태확인        
+    # def test_getCMSStatus(self) :
+    #     try :
+    #         obj = self.navercertService.getCMSStatus(self.clientCode, '02310310230900000210000000000001')
+    #         print(obj.receiptID)
+    #         print(obj.clientCode)
+    #         print(obj.state)
+    #         print(obj.expireDT)
+    #     except BarocertException as BE :
+    #         print(BE.code)
+    #         print(BE.message)
+    
+    # 출금동의 검증            
+    # def test_verifyCMS(self) :
+    #     try :
+    #         obj = self.navercertService.verifyCMS(self.clientCode, '02310310230900000210000000000001')
+    #         print(obj.receiptID)
+    #         print(obj.state)
+    #         print(obj.signedData)
+    #         print(obj.ci)
+    #         print(obj.receiverName)
+    #         print(obj.receiverDay)
+    #         print(obj.receiverYear)
+    #         print(obj.receiverHP)
+    #         print(obj.receiverGender)
+    #         print(obj.receiverEmail)
+    #         print(obj.receiverForeign)
+
     #     except BarocertException as BE :
     #         print(BE.code)
     #         print(BE.message)

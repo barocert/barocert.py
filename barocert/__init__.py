@@ -1,4 +1,4 @@
-__version__ = '1.2.2'
+__version__ = '1.3.0'
 Version = __version__  # for backward compatibility
 __all__ = ["BarocertException",
            "KakaoCMS",
@@ -7,6 +7,7 @@ __all__ = ["BarocertException",
            "KakaoMultiSign",
            "KakaoMultiSignTokens",
            "KakaocertService",
+           "NaverCMS",
            "NaverIdentity",
            "NaverSign",
            "NaverMultiSign",

@@ -6,7 +6,7 @@
 # 
 # Author : linkhub dev
 # Written : 2023-10-31
-# Updated : 2023-11-27
+# Updated : 2023-12-09
 # Thanks for your interest.
 
 from .base import BaseService, BarocertException
@@ -24,6 +24,7 @@ class NavercertService(BaseService):
         self._addScope("421")
         self._addScope("422")
         self._addScope("423")
+        self._addScope("424")
     
     # 본인인증 요청
     def requestIdentity(self, clientCode, identity):
@@ -229,6 +230,78 @@ class NavercertService(BaseService):
         
         return self._httppost('/NAVER/MultiSign/' + clientCode + '/' + receiptID)
 
+    # 출금동의 요청
+    def requestCMS(self, clientCode, cms):
+
+        if String.isNullorEmpty(clientCode):
+            raise BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.")
+        if False == clientCode.isdigit():
+            raise BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.")
+        if 12 != len(clientCode):
+            raise BarocertException(-99999999, "이용기관코드는 12자 입니다.")
+        if String.isNullorEmpty(cms):
+            raise BarocertException(-99999999, "출금동의 서명요청 정보가 입력되지 않았습니다.")    
+        if String.isNullorEmpty(cms.receiverHP):
+            raise BarocertException(-99999999, "수신자 휴대폰번호가 입력되지 않았습니다.")
+        if String.isNullorEmpty(cms.receiverName):
+            raise BarocertException(-99999999, "수신자 성명이 입력되지 않았습니다.")
+        if String.isNullorEmpty(cms.receiverBirthday):
+            raise BarocertException(-99999999, "수신자 생년월일이 입력되지 않았습니다.")
+        if String.isNullorEmpty(cms.callCenterNum):
+            raise BarocertException(-99999999, "고객센터 연락처가 입력되지 않았습니다.")
+        if String.isNullorEmpty(cms.expireIn):
+            raise BarocertException(-99999999, "만료시간이 입력되지 않았습니다.")
+        if String.isNullorEmpty(cms.requestCorp):
+            raise BarocertException(-99999999, "청구기관명이 입력되지 않았습니다.")
+        if String.isNullorEmpty(cms.bankName):
+            raise BarocertException(-99999999, "은행명이 입력되지 않았습니다.")
+        if String.isNullorEmpty(cms.bankAccountNum):
+            raise BarocertException(-99999999, "계좌번호가 입력되지 않았습니다.")
+        if String.isNullorEmpty(cms.bankAccountName):
+            raise BarocertException(-99999999, "예금주명이 입력되지 않았습니다.")
+        if String.isNullorEmpty(cms.bankAccountBirthday):
+            raise BarocertException(-99999999, "예금주 생년월일이 입력되지 않았습니다.")
+        postData = self._stringtify(cms)
+
+        return self._httppost('/NAVER/CMS/' + clientCode, postData)
+
+    # 출금동의 상태확인
+    def getCMSStatus(self, clientCode, receiptID):
+
+        if String.isNullorEmpty(clientCode):
+            raise BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.")
+        if False == clientCode.isdigit():
+            raise BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.")
+        if 12 != len(clientCode):
+            raise BarocertException(-99999999, "이용기관코드는 12자 입니다.")
+        if String.isNullorEmpty(receiptID):
+            raise BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.")
+        if False == receiptID.isdigit():
+            raise BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.")
+        if 32 != len(receiptID):
+            raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
+        
+
+        return self._httpget('/NAVER/CMS/' + clientCode + '/' + receiptID )
+    
+    # 출금동의 검증
+    def verifyCMS(self, clientCode, receiptID):
+
+        if String.isNullorEmpty(clientCode):
+            raise BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.")
+        if False == clientCode.isdigit():
+            raise BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.")
+        if 12 != len(clientCode):
+            raise BarocertException(-99999999, "이용기관코드는 12자 입니다.")
+        if String.isNullorEmpty(receiptID):
+            raise BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.")
+        if False == receiptID.isdigit():
+            raise BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.")
+        if 32 != len(receiptID):
+            raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
+
+        return self._httppost('/NAVER/CMS/' + clientCode + '/' + receiptID )
+
     def _isNullorEmptyTokenType(self, multiSignTokens):
         if multiSignTokens == None or multiSignTokens == "":
             return True
@@ -263,5 +336,9 @@ class NaverMultiSign(object):
         self.__dict__ = kwargs
 
 class NaverMultiSignTokens(object):
+    def __init__(self, **kwargs):
+        self.__dict__ = kwargs
+
+class NaverCMS(object):
     def __init__(self, **kwargs):
         self.__dict__ = kwargs
