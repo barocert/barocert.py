@@ -97,8 +97,10 @@ class NavercertServiceTestCase(unittest.TestCase):
     #         reqMessage = self.navercertService._encrypt('전자서명(단건) 요청 메시지'),
     #         callCenterNum = '1588-1600',
     #         expireIn = 1000,
-    #         token = self.navercertService._encrypt('전자서명(단건) 요청 원문'),
     #         tokenType = 'TEXT',
+    #         token = self.navercertService._encrypt('전자서명(단건) 요청 원문'),
+    # #       tokenType = 'HASH',
+    # #       token = self.navercertService._encrypt(self.navercertService._sha256('전자서명(단건) 요청 원문')),
     #         appUseYN = False,
     #         deviceOSType = 'IOS',
     #         returnURL = 'navercert://Sign'
@@ -158,8 +160,10 @@ class NavercertServiceTestCase(unittest.TestCase):
     #     for x in range(0,5):
     #         multiSignTokens.append(
     #             NaverMultiSignTokens(
+    #                 tokenType = "TEXT",    
     #                 token = self.navercertService._encrypt("전자서명(복수) 요청 원문" + str(x)),
-    #                 tokenType = "TEXT",
+    # #               tokenType = 'HASH',
+    # #               token = self.navercertService._encrypt(self.navercertService._sha256("전자서명(복수) 요청 원문" + str(x))),
     #             )
     #         )    
         
