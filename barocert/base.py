@@ -6,7 +6,7 @@
 # 
 # Author : linkhub dev
 # Written : 2023-03-08
-# Updated : 2023-12-09
+# Updated : 2023-12-13
 # Thanks for your interest.
 
 import json
@@ -225,8 +225,8 @@ class BaseService(__with_metaclass(Singleton, object)):
     def _encrypt(self, plainText):
         return Utils.AES256GCM(plainText, self.__secretKey)
 
-    def _sha256(self, target):
-        return Utils.sha256URLEncoding(target)        
+    def _sha256_base64url(self, target):
+        return Utils.sha256ToBase64url(target)        
 
 class BarocertEncoder(JSONEncoder):
     def default(self, o):
@@ -282,7 +282,7 @@ class Utils:
         return base64.b64encode(iv + enc + tag ).decode('utf-8')        
 
     @staticmethod
-    def sha256URLEncoding(target):
+    def sha256ToBase64url(target):
         hashed = hashlib.sha256(target.encode('utf-8')).digest()
         return base64.urlsafe_b64encode(hashed).rstrip(b'=').decode()
 
