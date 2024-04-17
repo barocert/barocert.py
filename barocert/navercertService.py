@@ -1,13 +1,4 @@
 # -*- coding: utf-8 -*-
-# Module for NavercertService API. It include base functionality of the
-# RESTful web service request and parse json result. It uses Linkhub module
-# to accomplish authentication APIs.
-#
-# 
-# Author : linkhub dev
-# Written : 2023-10-31
-# Updated : 2023-12-13
-# Thanks for your interest.
 
 from .base import BaseService, BarocertException
 from .util import String

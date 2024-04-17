@@ -72,6 +72,10 @@ class KakaocertServiceTestCase(unittest.TestCase):
     #         print(obj.state)
     #         print(obj.signedData)
     #         print(obj.ci)
+    #         print(obj.receiverName)
+    #         print(obj.receiverYear)
+    #         print(obj.receiverDay)
+    #         print(obj.receiverHP)
     #     except BarocertException as BE :
     #         print(BE.code)
     #         print(BE.message)
@@ -122,6 +126,10 @@ class KakaocertServiceTestCase(unittest.TestCase):
     #         print(obj.state)
     #         print(obj.signedData)
     #         print(obj.ci)
+    #         print(obj.receiverName)
+    #         print(obj.receiverYear)
+    #         print(obj.receiverDay)
+    #         print(obj.receiverHP)
     #     except BarocertException as BE :
     #         print(BE.code)
     #         print(BE.message)
@@ -183,6 +191,10 @@ class KakaocertServiceTestCase(unittest.TestCase):
     #         for multiSignedData in obj.multiSignedData:
     #             print(multiSignedData)
     #         print(obj.ci)
+    #         print(obj.receiverName)
+    #         print(obj.receiverYear)
+    #         print(obj.receiverDay)
+    #         print(obj.receiverHP)
     #     except BarocertException as BE :
     #         print(BE.code)
     #         print(BE.message)
@@ -237,6 +249,10 @@ class KakaocertServiceTestCase(unittest.TestCase):
     #         print(obj.state)
     #         print(obj.signedData)
     #         print(obj.ci)
+    #         print(obj.receiverName)
+    #         print(obj.receiverYear)
+    #         print(obj.receiverDay)
+    #         print(obj.receiverHP)
     #     except BarocertException as BE :
     #         print(BE.code)
     #         print(BE.message)
@@ -249,6 +265,10 @@ class KakaocertServiceTestCase(unittest.TestCase):
     #         print(obj.state)
     #         print(obj.signedData)
     #         print(obj.ci)
+    #         print(obj.receiverName)
+    #         print(obj.receiverYear)
+    #         print(obj.receiverDay)
+    #         print(obj.receiverHP)
     #     except BarocertException as BE :
     #         print(BE.code)
     #         print(BE.message)            
