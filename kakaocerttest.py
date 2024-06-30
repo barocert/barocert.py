@@ -80,6 +80,10 @@ class KakaocertServiceTestCase(unittest.TestCase):
     #         print(BE.code)
     #         print(BE.message)
     
+    # file = open("./barocert.pdf", 'rb')
+    # target = file.read()
+    # file.close()
+    
     # # 전자서명(단건) 요청
     # def test_requestSign(self):
     #     sign = KakaoSign(        
@@ -89,8 +93,10 @@ class KakaocertServiceTestCase(unittest.TestCase):
     #         signTitle = '전자서명(단건) 서명 요청 제목',
     #         extraMessage = self.kakaocertService._encrypt('전자서명(단건) 커스텀 메시지'),
     #         expireIn = 1000,
-    #         token = self.kakaocertService._encrypt('전자서명(단건) 요청 원문'),
     #         tokenType = 'TEXT',
+    #         token = self.kakaocertService._encrypt('전자서명(단건) 요청 원문'),
+    #         # tokenType = 'PDF',
+    #         # token = self.kakaocertService._encrypt(self.kakaocertService._sha256_base64url_file(self.target)),
     #         appUseYN = False,
     #         returnURL = 'https://kakao.barocert.com'
     #     )

@@ -88,6 +88,10 @@ class PasscertServiceTestCase(unittest.TestCase):
     #         print(BE.code)
     #         print(BE.message)
     
+    # file = open("./barocert.pdf", 'rb')
+    # target = file.read()
+    # file.close()
+    
     # # 전자서명 요청
     # def test_requestSign(self):
     #     sign = PassSign(        
@@ -98,8 +102,10 @@ class PasscertServiceTestCase(unittest.TestCase):
     #         reqMessage = self.passcertService._encrypt('전자서명 요청 메시지'),
     #         callCenterNum = '1600-9854',
     #         expireIn = 1000,
-    #         token = self.passcertService._encrypt('전자서명 요청 원문'),
     #         tokenType = 'HASH',
+    #         token = self.passcertService._encrypt('전자서명 요청 원문'),
+    #         # tokenType = 'PDF',
+    #         # token = self.passcertService._encrypt(self.passcertService._sha256_base64url_file(self.target)),
     #         userAgreementYN = True,
     #         receiverInfoYN = True,
     #         originalTypeCode = 'AG',

@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # code for console Encoding difference. Dont' mind on it
 import sys
-import imp
+# import imp
 import random
 
-imp.reload(sys)
+# imp.reload(sys)
 try:
     sys.setdefaultencoding('UTF8')
 except Exception as E:
@@ -79,6 +79,10 @@ class NavercertServiceTestCase(unittest.TestCase):
     #         print(BE.code)
     #         print(BE.message)
     
+    # file = open("./barocert.pdf", 'rb')
+    # target = file.read()
+    # file.close()
+    
     # 전자서명(단건) 요청
     # def test_requestSign(self):
     #     sign = NaverSign(        
@@ -91,19 +95,19 @@ class NavercertServiceTestCase(unittest.TestCase):
     #         expireIn = 1000,
     #         tokenType = 'TEXT',
     #         token = self.navercertService._encrypt('전자서명(단건) 요청 원문'),
-    # #       tokenType = 'HASH',
-    # #       token = self.navercertService._encrypt(self.navercertService._sha256_base64url('전자서명(단건) 요청 원문')),
+    #         # tokenType = 'PDF',
+    #         # token = self.navercertService._encrypt(self.navercertService._sha256_base64url_file(self.target)),
     #         appUseYN = False,
     #         deviceOSType = 'IOS',
     #         returnURL = 'navercert://Sign'
     #     )
         
-    #     try :
-    #         obj = self.navercertService.requestSign(self.clientCode, sign)
-    #         print(obj.receiptID)
-    #     except BarocertException as BE :
-    #         print(BE.code)
-    #         print(BE.message)
+        # try :
+        #     obj = self.navercertService.requestSign(self.clientCode, sign)
+        #     print(obj.receiptID)
+        # except BarocertException as BE :
+        #     print(BE.code)
+        #     print(BE.message)
             
     # 전자서명(단건) 상태확인            
     # def test_getSignState(self) :
