@@ -87,7 +87,7 @@ class PasscertService(BaseService):
 
         postData = self._stringtify(identityVerify)
 
-        return self._httppost('/PASS/Identity/' + clientCode + '/' + receiptID, postData)
+        return self._httppost('/PASS/Identity/Verify/' + clientCode + '/' + receiptID, postData)
 
     # 전자서명 요청
     def requestSign(self, clientCode, sign):
@@ -161,7 +161,7 @@ class PasscertService(BaseService):
 
         postData = self._stringtify(signVerify)    
 
-        return self._httppost('/PASS/Sign/' + clientCode + '/' + receiptID, postData)
+        return self._httppost('/PASS/Sign/Verify/' + clientCode + '/' + receiptID, postData)
     
     # 출금동의 요청
     def requestCMS(self, clientCode, cms):
@@ -239,7 +239,7 @@ class PasscertService(BaseService):
         
         postData = self._stringtify(cmsVerify)
 
-        return self._httppost('/PASS/CMS/' + clientCode + '/' + receiptID, postData)
+        return self._httppost('/PASS/CMS/Verify/' + clientCode + '/' + receiptID, postData)
     
     # 간편로그인 요청
     def requestLogin(self, clientCode, login):
@@ -311,7 +311,7 @@ class PasscertService(BaseService):
 
         postData = self._stringtify(loginVerify)
 
-        return self._httppost('/PASS/Login/' + clientCode + '/' + receiptID, postData)
+        return self._httppost('/PASS/Login/Verify/' + clientCode + '/' + receiptID, postData)
 
 class PassCMS(object):
     def __init__(self, **kwargs):

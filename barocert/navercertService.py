@@ -78,7 +78,7 @@ class NavercertService(BaseService):
         if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
 
-        return self._httppost('/NAVER/Identity/' + clientCode + '/' + receiptID )
+        return self._httppost('/NAVER/Identity/Verify/' + clientCode + '/' + receiptID )
 
     # 전자서명 요청(단건)
     def requestSign(self, clientCode, sign):
@@ -148,7 +148,7 @@ class NavercertService(BaseService):
         if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
 
-        return self._httppost('/NAVER/Sign/' + clientCode + '/' + receiptID)
+        return self._httppost('/NAVER/Sign/Verify/' + clientCode + '/' + receiptID)
     
     # 전자서명 요청(복수)
     def requestMultiSign(self, clientCode, multiSign):
@@ -219,7 +219,7 @@ class NavercertService(BaseService):
         if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
         
-        return self._httppost('/NAVER/MultiSign/' + clientCode + '/' + receiptID)
+        return self._httppost('/NAVER/MultiSign/Verify/' + clientCode + '/' + receiptID)
 
     # 출금동의 요청
     def requestCMS(self, clientCode, cms):
@@ -291,7 +291,7 @@ class NavercertService(BaseService):
         if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
 
-        return self._httppost('/NAVER/CMS/' + clientCode + '/' + receiptID )
+        return self._httppost('/NAVER/CMS/Verify/' + clientCode + '/' + receiptID )
 
     def _isNullorEmptyTokenType(self, multiSignTokens):
         if multiSignTokens == None or multiSignTokens == "":

@@ -81,7 +81,7 @@ class KakaocertService(BaseService):
         if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
 
-        return self._httppost('/KAKAO/Identity/' + clientCode + '/' + receiptID )
+        return self._httppost('/KAKAO/Identity/Verify/' + clientCode + '/' + receiptID )
 
     # 전자서명 요청(단건)
     def requestSign(self, clientCode, sign):
@@ -147,7 +147,7 @@ class KakaocertService(BaseService):
         if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
 
-        return self._httppost('/KAKAO/Sign/' + clientCode + '/' + receiptID)
+        return self._httppost('/KAKAO/Sign/Verify/' + clientCode + '/' + receiptID)
     
     # 전자서명 요청(복수)
     def requestMultiSign(self, clientCode, multiSign):
@@ -216,7 +216,7 @@ class KakaocertService(BaseService):
         if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
         
-        return self._httppost('/KAKAO/MultiSign/' + clientCode + '/' + receiptID)
+        return self._httppost('/KAKAO/MultiSign/Verify/' + clientCode + '/' + receiptID)
 
     # 출금동의 요청
     def requestCMS(self, clientCode, cms):
@@ -290,7 +290,7 @@ class KakaocertService(BaseService):
         if 32 != len(receiptID):
             raise BarocertException(-99999999, "접수아이디는 32자 입니다.")
         
-        return self._httppost('/KAKAO/CMS/' + clientCode + '/' + receiptID)
+        return self._httppost('/KAKAO/CMS/Verify/' + clientCode + '/' + receiptID)
     
     # 간편로그인 검증
     def verifyLogin(self, clientCode, txID):
@@ -304,7 +304,7 @@ class KakaocertService(BaseService):
         if String.isNullorEmpty(txID):
             raise BarocertException(-99999999, "트랜잭션 아이디가 입력되지 않았습니다.")
         
-        return self._httppost('/KAKAO/Login/' + clientCode + '/' + txID)
+        return self._httppost('/KAKAO/Login/Verify/' + clientCode + '/' + txID)
 
     def _isNullorEmptyTitle(self, multiSignTokens):
         if multiSignTokens == None or multiSignTokens == "":
